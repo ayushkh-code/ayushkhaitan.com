@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
-import { bioParagraphs } from "../data/bio";
+import {
+  aiHomeParagraphs,
+  aiHomeTitle,
+  bioParagraphs,
+} from "../data/bio";
 import Headshot from "../components/Headshot";
+import { ReadMoreParagraphs } from "../components/ReadMore";
 
 const previewCards = [
   {
@@ -38,11 +43,23 @@ export default function Home() {
             <p className="mt-3 text-lg text-accent">
               Strategy, Finance &amp; Operations Leader
             </p>
-            <div className="mt-10 space-y-6 text-[1.0625rem] leading-relaxed text-text-primary">
-              {bioParagraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-            </div>
+
+            <ReadMoreParagraphs
+              paragraphs={bioParagraphs}
+              previewCount={1}
+              className="mt-10"
+            />
+
+            <section className="mt-10 border-t border-border pt-10">
+              <h2 className="font-serif text-2xl text-text-primary">
+                {aiHomeTitle}
+              </h2>
+              <ReadMoreParagraphs
+                paragraphs={aiHomeParagraphs}
+                previewCount={3}
+                className="mt-6"
+              />
+            </section>
           </div>
 
           <div className="flex justify-center lg:justify-end">

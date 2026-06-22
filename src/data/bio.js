@@ -11,3 +11,13 @@ export const contact = {
   email: "ayushkhaitan@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayushkhaitan/",
 };
+
+export const aiHomeTitle = "How I Use AI";
+
+export const aiHomeParagraphs = [
+  "I actively use AI tools as part of my daily workflow across research, analysis, writing, problem solving, and software development.",
+  "I have built AI-assisted automations for recruiting and networking workflows, developed operational decision-support tools, and regularly leverage LLMs to accelerate research, structure complex business problems, and improve decision quality.",
+  "My perspective on AI is pragmatic: I view it as a productivity and leverage tool that augments human judgment rather than replaces it.",
+  "As a leader, I am particularly interested in how AI can simplify decision-making, automate repetitive work, and help organizations scale knowledge, planning, and execution more effectively.",
+  "Well versed with: Cursor, Vercel, Git Hub, Codex, Claude Code, Chat GPT, Gemini.",
+];
