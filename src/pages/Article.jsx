@@ -4,6 +4,25 @@ import {
   getArticleBySlug,
 } from "../data/articles";
 
+function ArticleImage({ image }) {
+  if (!image) return null;
+
+  return (
+    <figure className="my-8">
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full rounded-sm border border-border"
+      />
+      {image.caption && (
+        <figcaption className="mt-3 text-sm text-text-secondary">
+          {image.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 export default function Article() {
   const { slug } = useParams();
   const article = getArticleBySlug(slug);
@@ -20,6 +39,7 @@ export default function Article() {
   }
 
   const paragraphs = article.content.split("\n\n");
+  const imageAfter = article.image?.afterParagraph ?? -1;
 
   return (
     <article className="page-shell">
@@ -42,8 +62,13 @@ export default function Article() {
       </section>
 
       <div className="prose-article mt-10 rounded-sm border border-border bg-background p-8 shadow-sm sm:p-10">
-        {paragraphs.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+        {paragraphs.map((paragraph, index) => (
+          <div key={paragraph.slice(0, 48)}>
+            <p>{paragraph}</p>
+            {article.image && index === imageAfter && (
+              <ArticleImage image={article.image} />
+            )}
+          </div>
         ))}
       </div>
     </article>
