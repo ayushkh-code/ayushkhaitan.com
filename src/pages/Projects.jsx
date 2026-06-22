@@ -30,14 +30,26 @@ export default function Projects() {
                   Coming Soon
                 </span>
               ) : (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent text-sm"
-                >
-                  View on GitHub
-                </a>
+                <div className="flex flex-wrap gap-x-5 gap-y-2">
+                  {project.appLink && (
+                    <a
+                      href={project.appLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-accent text-sm"
+                    >
+                      Open app
+                    </a>
+                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-accent text-sm"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
               )}
             </div>
           </li>

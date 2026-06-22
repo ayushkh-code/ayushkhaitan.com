@@ -4,6 +4,7 @@ export const projects = [
     description:
       "A FIFA World Cup-themed tool for prioritizing and ranking operational KPIs, built to make tradeoff discussions more intuitive for ops teams.",
     link: "https://github.com/ayushkh-code/worldcupkpi",
+    appLink: "https://priority-world-cup.vercel.app",
   },
   {
     title: "Job Search Cold Email Prompt",
