@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -28,6 +29,24 @@ export default function Projects() {
           </ul>
         </section>
       )}
+
+      <section className="mt-12">
+        <h2 className="font-serif text-2xl text-text-primary">
+          Tools for job searchers
+        </h2>
+        <Link
+          to="/projects/job-search"
+          className="preview-card group mt-6 block max-w-2xl"
+        >
+          <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
+            Prompts
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+            Copy-ready prompts for job matching, outreach, and search
+            automation.
+          </p>
+        </Link>
+      </section>
 
       {wipProjects.length > 0 && (
         <section className="mt-12">

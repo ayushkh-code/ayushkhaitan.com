@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "SKU Guru",
+    description:
+      "Competitive intelligence for ecommerce operators — tracks price, availability, delivery promise, and assortment gaps across Amazon, Walmart, Target, and more via Apify scraping.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
     title: "Can't Find It",
     description:
       "Crowdsourced demand intelligence — users log products they can't find online, and the app aggregates submissions into a live, gamified demand map.",
