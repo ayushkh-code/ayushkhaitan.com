@@ -70,6 +70,9 @@ export default function Article() {
             )}
           </div>
         ))}
+        {article.images?.map((image) => (
+          <ArticleImage key={image.src} image={image} />
+        ))}
       </div>
     </article>
   );

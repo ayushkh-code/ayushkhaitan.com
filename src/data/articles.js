@@ -1,5 +1,31 @@
 export const articles = [
   {
+    slug: "zepto-densification-game",
+    title: "Zepto and the densification game",
+    description:
+      "Distance is the tax you pay on every single order. Zepto just showed the entire industry how to stop paying it.",
+    date: "2026-06-22",
+    content: `Zepto filed its updated DRHP (UDRHP) with SEBI in June 2026, which forced a level of financial and operational disclosure rare for a private Indian startup. That gives us audited, granular operations data (orders per day per store, fixed cost per order, delivery distance) instead of the usual speculative estimates.
+
+So what does this mean?
+
+Looking at these 2 tables together provides a story of the flywheel. Last mile is where the smoking gun lies. Shorter delivery distances let a rider complete more drops per hour, which lifts throughput, which spreads fixed cost across more orders, which makes each store profitable faster, which funds the next cluster of dark stores. The takeaway for anyone running a fulfillment network is that density compounds in a way that scale alone never does. You can add 800 stores and still bleed if they sit too far apart, because distance is the tax you pay on every single order. Zepto's bet was that going deep in fewer neighborhoods beats going wide across many, and the unit economics are now proving the math. However, even with all of this working, Zepto still loses roughly Rs 79/order against Blinkit's Rs 3/order, and it has no parent ecosystem to absorb the burn the way Blinkit leans on Eternal . While efficiency gains have bought them runway, net profitability still remains a question mark.`,
+    images: [
+      {
+        src: "/writing/zepto-unit-economics-flywheel.png",
+        alt: "Zepto unit economics table showing orders per day per store, marketing cost per order, EBITDA loss per order, and FCF burn per order from FY24 to FY26",
+        caption:
+          "Zepto | The Densification Flywheel — Unit economics progression, FY24 to FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, INDmoney. Compiled June 2026.",
+      },
+      {
+        src: "/writing/zepto-operating-efficiency-gains.png",
+        alt: "Zepto operating efficiency table comparing average distance per order, fixed cost per order, SKUs per dark store, and new-store time to profit from FY24 to FY26",
+        caption:
+          "Zepto | Operating Efficiency Gains — FY24 / Q1 FY24 vs FY26 / Q4 FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, RevQ. Compiled June 2026.",
+      },
+    ],
+  },
+  {
     slug: "path-to-profitability",
     title: "Path to Profitability — What Does It Entail?",
     description:
