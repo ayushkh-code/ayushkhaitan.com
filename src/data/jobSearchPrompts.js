@@ -41,12 +41,12 @@ TARGET ROLES (search for these titles):
 - Business Operations (Director / VP)
 
 SEARCH INSTRUCTIONS:
-1. Search site:job-boards.greenhouse.io for open roles matching the target titles above. Prioritize roles at well-known companies, based in New York (or remote). Use multiple Google searches to find 10–15 active listings.
-2. For each job found, navigate to the Greenhouse application URL and verify the job is still open (not expired — expired jobs redirect to job-boards.greenhouse.io/[company]?error=true).
+1. Search site:job-boards.greenhouse.io for open roles matching the target titles above. Prioritize roles at well-known companies, based in New York (or remote). Use multiple Google searches to find 10-15 active listings.
+2. For each job found, navigate to the Greenhouse application URL and verify the job is still open (not expired - expired jobs redirect to job-boards.greenhouse.io/[company]?error=true).
 3. Fill all form fields using my profile above.
 4. For cover letter: skip if optional; leave blank.
 5. Click "Quick Apply with MyGreenhouse" to attach resume (this requires Greenhouse to already be connected in your Chrome browser with your resume saved).
-6. Leave each completed tab open for me to review and submit — do NOT click Submit.
+6. Leave each completed tab open for me to review and submit - do NOT click Submit.
 
 TECHNICAL APPROACH (for Claude):
 - Text fields: inject value via React native setter + dispatch input and change events

@@ -1,4 +1,4 @@
-# Ayush Khaitan — Personal Site
+# Ayush Khaitan - Personal Site
 
 Personal portfolio and writing site for Ayush Khaitan.
 

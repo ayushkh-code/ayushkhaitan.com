@@ -15,21 +15,21 @@ Looking at these 2 tables together provides a story of the flywheel. Last mile i
         src: "/writing/zepto-unit-economics-flywheel.png",
         alt: "Zepto unit economics table showing orders per day per store, marketing cost per order, EBITDA loss per order, and FCF burn per order from FY24 to FY26",
         caption:
-          "Zepto | The Densification Flywheel — Unit economics progression, FY24 to FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, INDmoney. Compiled June 2026.",
+          "Zepto | The Densification Flywheel - Unit economics progression, FY24 to FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, INDmoney. Compiled June 2026.",
       },
       {
         src: "/writing/zepto-operating-efficiency-gains.png",
         alt: "Zepto operating efficiency table comparing average distance per order, fixed cost per order, SKUs per dark store, and new-store time to profit from FY24 to FY26",
         caption:
-          "Zepto | Operating Efficiency Gains — FY24 / Q1 FY24 vs FY26 / Q4 FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, RevQ. Compiled June 2026.",
+          "Zepto | Operating Efficiency Gains - FY24 / Q1 FY24 vs FY26 / Q4 FY26. Source: Zepto UDRHP (SEBI); Inc42, IPO Central, RevQ. Compiled June 2026.",
       },
     ],
   },
   {
     slug: "path-to-profitability",
-    title: "Path to Profitability — What Does It Entail?",
+    title: "Path to Profitability - What Does It Entail?",
     description:
-      "What Anthropic's path to a $1T valuation reveals about constrained optimization — and why the lesson applies far beyond AI.",
+      "What Anthropic's path to a $1T valuation reveals about constrained optimization - and why the lesson applies far beyond AI.",
     date: "2026-06-21",
     image: {
       src: "/writing/anthropic-arr-trajectory.png",
@@ -59,7 +59,7 @@ That's why I found the Anthropic discussion so interesting. Beneath all the AI h
     slug: "why-i-still-grocery-shop-in-person",
     title: "Why I Still Grocery Shop in Person",
     description:
-      "A Trader Joe's trip that should have taken 30 minutes turned into 90 — and what it reveals about grocery delivery unit economics.",
+      "A Trader Joe's trip that should have taken 30 minutes turned into 90 - and what it reveals about grocery delivery unit economics.",
     date: "2026-06-19",
     content: `Recently, I was at Trader Joe's picking up a few things for a get-together that I was hosting at my place.
 

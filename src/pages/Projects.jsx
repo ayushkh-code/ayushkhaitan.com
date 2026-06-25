@@ -54,7 +54,7 @@ export default function Projects() {
             Work in Progress
           </h2>
           <p className="mt-2 text-sm text-text-secondary">
-            Active builds — not yet deployed or still being refined.
+            Active builds - not yet deployed or still being refined.
           </p>
           <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {wipProjects.map((project) => (
@@ -92,7 +92,7 @@ function ProjectCard({ project }) {
               href={project.appLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-accent text-sm"
+              className="btn-primary text-sm"
             >
               Open app
             </a>

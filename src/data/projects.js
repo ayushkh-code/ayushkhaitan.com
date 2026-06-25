@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "SKU Guru",
     description:
-      "Competitive intelligence for ecommerce operators — tracks price, availability, delivery promise, and assortment gaps across Amazon, Walmart, Target, and more via Apify scraping.",
+      "Competitive intelligence for ecommerce operators - tracks price, availability, delivery promise, and assortment gaps across Amazon, Walmart, Target, and more via Apify scraping.",
     link: null,
     appLink: null,
     wip: true,
@@ -10,7 +10,7 @@ export const projects = [
   {
     title: "Can't Find It",
     description:
-      "Crowdsourced demand intelligence — users log products they can't find online, and the app aggregates submissions into a live, gamified demand map.",
+      "Crowdsourced demand intelligence - users log products they can't find online, and the app aggregates submissions into a live, gamified demand map.",
     link: null,
     appLink: null,
     wip: true,
@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Tariff Impact Calculator",
     description:
-      "Models how tariff rate changes hit margins across a product portfolio — per-unit math, sensitivity charts, and exposure ranking for ops and finance leaders.",
+      "Models how tariff rate changes hit margins across a product portfolio - per-unit math, sensitivity charts, and exposure ranking for ops and finance leaders.",
     link: null,
     appLink: null,
     wip: true,
@@ -26,7 +26,7 @@ export const projects = [
   {
     title: "Cost of Forecast Error",
     description:
-      "Translates forecast error in basis points into labor cost for forecast-to-staffing operations — models asymmetric over-staffing (VTO) vs under-staffing (overtime) with tolerance bands, flex absorption, and a live calc trace.",
+      "Translates forecast error in basis points into labor cost for forecast-to-staffing operations - models asymmetric over-staffing (VTO) vs under-staffing (overtime) with tolerance bands, flex absorption, and a live calc trace.",
     link: null,
     appLink: "https://cost-of-forecast-error.vercel.app",
     wip: true,
@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "Constraint Optimizer",
     description:
-      "Interactive supply chain scenario demo — guided wizard, industry-specific constraints, and a heuristic engine that outputs ranked node actions and KPI deltas.",
+      "Interactive supply chain scenario demo - guided wizard, industry-specific constraints, and a heuristic engine that outputs ranked node actions and KPI deltas.",
     link: null,
     appLink: null,
     wip: true,
@@ -42,7 +42,7 @@ export const projects = [
   {
     title: "Microlearning Email Feed",
     description:
-      "Sign-up flow for a recurring microlearning email product — topic selection, schedule preferences, and a sample email preview with expandable learning cards.",
+      "Sign-up flow for a recurring microlearning email product - topic selection, schedule preferences, and a sample email preview with expandable learning cards.",
     link: "https://github.com/ayushkh-code/microlearning_digest",
     appLink: null,
     wip: true,
@@ -50,7 +50,7 @@ export const projects = [
   {
     title: "Footprint",
     description:
-      "Find where to place your next distribution center — map current warehouse reach by ship speed, then get ranked ZIP-3 siting alternatives backed by US Census demand data.",
+      "Find where to place your next distribution center - map current warehouse reach by ship speed, then get ranked ZIP-3 siting alternatives backed by US Census demand data.",
     link: "https://github.com/ayushkh-code/where-to-build",
     appLink: "https://network-siting-explorer.vercel.app",
     wip: false,
@@ -58,7 +58,7 @@ export const projects = [
   {
     title: "Priority World Cup",
     description:
-      "A World Cup-themed bracket for prioritizing business KPIs — 16 parameters across 4 categories compete through group stage and knockouts.",
+      "A World Cup-themed bracket for prioritizing business KPIs - 16 parameters across 4 categories compete through group stage and knockouts.",
     link: "https://github.com/ayushkh-code/worldcupkpi",
     appLink: "https://priority-world-cup.vercel.app",
     wip: false,
