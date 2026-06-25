@@ -40,9 +40,6 @@ export default function Home() {
             <h1 className="mt-4 font-serif text-4xl tracking-tight text-text-primary sm:text-5xl">
               Ayush Khaitan
             </h1>
-            <p className="mt-3 text-lg text-accent">
-              Strategy, Finance &amp; Operations Leader
-            </p>
 
             <ReadMoreParagraphs
               paragraphs={bioParagraphs}
