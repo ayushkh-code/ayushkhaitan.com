@@ -1,25 +1,81 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   formatArticleDate,
   getArticleBySlug,
 } from "../data/articles";
 
-function ArticleImage({ image }) {
-  if (!image) return null;
+function ImageLightbox({ image, onClose }) {
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
 
   return (
-    <figure className="my-8">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 sm:p-8"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={image.alt}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute right-4 top-4 rounded-sm bg-white/10 px-3 py-1.5 text-sm text-white transition-colors hover:bg-white/20"
+      >
+        Close
+      </button>
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full rounded-sm border border-border"
+        className="max-h-[90vh] max-w-full cursor-zoom-out rounded-sm object-contain shadow-2xl"
+        onClick={(event) => event.stopPropagation()}
       />
-      {image.caption && (
-        <figcaption className="mt-3 text-sm text-text-secondary">
-          {image.caption}
-        </figcaption>
+    </div>
+  );
+}
+
+function ArticleImage({ image }) {
+  const [zoomed, setZoomed] = useState(false);
+
+  if (!image) return null;
+
+  return (
+    <>
+      <figure className="my-8">
+        <button
+          type="button"
+          onClick={() => setZoomed(true)}
+          className="group block w-full cursor-zoom-in text-left"
+          aria-label={`Zoom image: ${image.alt}`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full rounded-sm border border-border transition group-hover:border-accent/40 group-hover:shadow-md"
+          />
+        </button>
+        {image.caption && (
+          <figcaption className="mt-3 text-sm text-text-secondary">
+            {image.caption}
+          </figcaption>
+        )}
+      </figure>
+      {zoomed && (
+        <ImageLightbox image={image} onClose={() => setZoomed(false)} />
       )}
-    </figure>
+    </>
   );
 }
 
