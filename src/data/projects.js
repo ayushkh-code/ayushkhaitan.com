@@ -48,6 +48,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "Where to build",
+    description:
+      "Evaluate distribution node locations against US demand geography: ZIP-3 lookup, coverage analysis, state density maps, and current network reach.",
+    link: "https://github.com/ayushkh-code/where-to-build",
+    appLink: "https://network-siting-explorer.vercel.app",
+    wip: false,
+  },
+  {
     title: "Priority World Cup",
     description:
       "A World Cup-themed bracket for prioritizing business KPIs — 16 parameters across 4 categories compete through group stage and knockouts.",
