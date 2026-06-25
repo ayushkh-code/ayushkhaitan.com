@@ -24,6 +24,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "Cost of Forecast Error",
+    description:
+      "Translates forecast error in basis points into labor cost for forecast-to-staffing operations — models asymmetric over-staffing (VTO) vs under-staffing (overtime) with tolerance bands, flex absorption, and a live calc trace.",
+    link: null,
+    appLink: "https://cost-of-forecast-error.vercel.app",
+    wip: true,
+  },
+  {
     title: "Constraint Optimizer",
     description:
       "Interactive supply chain scenario demo — guided wizard, industry-specific constraints, and a heuristic engine that outputs ranked node actions and KPI deltas.",
