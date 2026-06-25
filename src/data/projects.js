@@ -48,9 +48,9 @@ export const projects = [
     wip: true,
   },
   {
-    title: "Where to build",
+    title: "Footprint",
     description:
-      "Evaluate distribution node locations against US demand geography: ZIP-3 lookup, coverage analysis, state density maps, and current network reach.",
+      "Find where to place your next distribution center — map current warehouse reach by ship speed, then get ranked ZIP-3 siting alternatives backed by US Census demand data.",
     link: "https://github.com/ayushkh-code/where-to-build",
     appLink: "https://network-siting-explorer.vercel.app",
     wip: false,
