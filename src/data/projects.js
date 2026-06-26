@@ -71,4 +71,12 @@ export const projects = [
     appLink: null,
     wip: false,
   },
+  {
+    title: "Warehouse Simulator (game)",
+    description:
+      "Browser-based fulfillment warehouse tycoon - balance inventory, labor, and equipment against a 10-week demand forecast while random events disrupt the plan.",
+    link: "https://github.com/ayushkh-code/warehouse-simulator",
+    appLink: "https://warehouse-simulator-green.vercel.app",
+    wip: false,
+  },
 ];
