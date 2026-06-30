@@ -48,6 +48,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "QC Halo",
+    description:
+      "Quick-commerce catchment simulator for Bangalore - drag a candidate dark store across 198 BBMP wards shaded by 2011 census density, then watch net-new orders vs cannibalization update live against 443 real store positions.",
+    link: "https://github.com/ayushkh-code/qc-halo",
+    appLink: "https://qc-halo.vercel.app",
+    wip: false,
+  },
+  {
     title: "Footprint",
     description:
       "Find where to place your next distribution center - map current warehouse reach by ship speed, then get ranked ZIP-3 siting alternatives backed by US Census demand data.",
