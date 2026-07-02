@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { jobSearchPrompts } from "../data/jobSearchPrompts";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { jobSearchPrompts } from "../data/jobSearchResources";
 
 export default function JobSearch() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const element = document.querySelector(hash);
+    element?.scrollIntoView({ behavior: "smooth" });
+  }, [hash]);
   return (
     <div className="page-shell">
       <section className="page-hero">
@@ -49,17 +56,35 @@ function PromptCard({ prompt }) {
   }
 
   return (
-    <li className="rounded-sm border border-border bg-background p-6 shadow-sm">
+    <li
+      id={prompt.slug}
+      className="scroll-mt-24 rounded-sm border border-border bg-background p-6 shadow-sm"
+    >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <h3 className="font-serif text-xl text-text-primary">{prompt.title}</h3>
-        <button
-          type="button"
-          onClick={handleCopy}
-          className="text-sm text-accent transition-colors hover:underline"
-        >
-          {copied ? "Copied" : "Copy prompt"}
-        </button>
+        <div className="flex flex-wrap gap-x-5 gap-y-2">
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="text-sm text-accent transition-colors hover:underline"
+          >
+            {copied ? "Copied" : "Copy prompt"}
+          </button>
+          {prompt.githubLink && (
+            <a
+              href={prompt.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-accent text-sm"
+            >
+              View on GitHub
+            </a>
+          )}
+        </div>
       </div>
+      {prompt.description && (
+        <p className="mt-3 text-sm text-text-secondary">{prompt.description}</p>
+      )}
       <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-text-primary">
         {visibleText}
       </p>

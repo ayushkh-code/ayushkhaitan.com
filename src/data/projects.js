@@ -48,7 +48,7 @@ export const projects = [
     wip: true,
   },
   {
-    title: "QC Halo",
+    title: "Halo",
     description:
       "Quick-commerce catchment simulator for Bangalore - drag a candidate dark store across 198 BBMP wards shaded by 2011 census density, then watch net-new orders vs cannibalization update live against 443 real store positions.",
     link: "https://github.com/ayushkh-code/qc-halo",
@@ -69,14 +69,6 @@ export const projects = [
       "A World Cup-themed bracket for prioritizing business KPIs - 16 parameters across 4 categories compete through group stage and knockouts.",
     link: "https://github.com/ayushkh-code/worldcupkpi",
     appLink: "https://priority-world-cup.vercel.app",
-    wip: false,
-  },
-  {
-    title: "Job Search Cold Email Prompt",
-    description:
-      "A Gmail-draft automation workflow for recruiter cold outreach, built to reduce repetitive manual work in an active job search.",
-    link: "https://github.com/ayushkh-code/job-search-cold-email-prompt",
-    appLink: null,
     wip: false,
   },
   {

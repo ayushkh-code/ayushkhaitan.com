@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
+import { jobSearchPrompts } from "../data/jobSearchResources";
 
 export default function Projects() {
   const wipProjects = projects.filter((p) => p.wip);
@@ -34,18 +35,39 @@ export default function Projects() {
         <h2 className="font-serif text-2xl text-text-primary">
           Tools for job searchers
         </h2>
-        <Link
-          to="/projects/job-search"
-          className="preview-card group mt-6 block max-w-2xl"
-        >
-          <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
-            Prompts
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-            Copy-ready prompts for job matching, outreach, and search
-            automation.
-          </p>
-        </Link>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <Link
+              to="/projects/job-search"
+              className="preview-card group block h-full"
+            >
+              <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
+                Prompts
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                Copy-ready prompts for job matching, outreach, and search
+                automation.
+              </p>
+            </Link>
+          </li>
+          {jobSearchPrompts
+            .filter((prompt) => prompt.slug === "job-search-cold-email-prompt")
+            .map((prompt) => (
+              <li key={prompt.slug}>
+                <Link
+                  to={`/projects/job-search#${prompt.slug}`}
+                  className="preview-card group block h-full"
+                >
+                  <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
+                    {prompt.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                    {prompt.description}
+                  </p>
+                </Link>
+              </li>
+            ))}
+        </ul>
       </section>
 
       {wipProjects.length > 0 && (
