@@ -37,6 +37,23 @@ export default function Projects() {
         </h2>
         <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <li>
+            <a
+              href="https://ai-job-search-toolkit-ten.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="preview-card group block h-full"
+            >
+              <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
+                The AI Job Search Toolkit
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                AI prompts and workflows for every stage of the search - matching,
+                tailoring, outreach, and tracking. Runs in your own AI account.
+                One-time purchase.
+              </p>
+            </a>
+          </li>
+          <li>
             <Link
               to="/projects/job-search"
               className="preview-card group block h-full"
