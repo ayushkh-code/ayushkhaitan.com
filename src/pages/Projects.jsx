@@ -44,12 +44,12 @@ export default function Projects() {
               className="preview-card group block h-full"
             >
               <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
-                The AI Job Search Toolkit
+                Search Runbook
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                AI prompts and workflows for every stage of the search - matching,
-                tailoring, outreach, and tracking. Runs in your own AI account.
-                One-time purchase.
+                AI workflows for every stage of the search: fit, outreach, prep,
+                and tracking. Prompts you run in your own AI account. One-time
+                purchase.
               </p>
             </a>
           </li>
