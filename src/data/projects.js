@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "Supply Chain Suite",
+    description:
+      "Executive portfolio of S&OP, network, inventory, and supplier tools for supply chain VPs - forecast error economics, facility siting, safety stock, SKU rationalization, and more in one dashboard.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
     title: "SKU Guru",
     description:
       "Competitive intelligence for ecommerce operators - tracks price, availability, delivery promise, and assortment gaps across Amazon, Walmart, Target, and more via Apify scraping.",
