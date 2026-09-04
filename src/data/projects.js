@@ -56,6 +56,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "Gripe",
+    description:
+      "See what customers complain about - LinkedIn complaint themes by sector and cafe, refreshed weekly, with sample posts and Excel export.",
+    link: null,
+    appLink: "https://gripe-gilt.vercel.app",
+    wip: false,
+  },
+  {
     title: "Halo",
     description:
       "Quick-commerce catchment simulator for Bangalore - drag a candidate dark store across 198 BBMP wards shaded by 2011 census density, then watch net-new orders vs cannibalization update live against 443 real store positions.",
