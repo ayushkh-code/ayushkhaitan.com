@@ -8,6 +8,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "Gripe",
+    description:
+      "See what customers complain about - LinkedIn complaint themes by sector and cafe, refreshed weekly, with sample posts and Excel export.",
+    link: null,
+    appLink: "https://gripe-gilt.vercel.app",
+    wip: true,
+  },
+  {
     title: "SKU Guru",
     description:
       "Competitive intelligence for ecommerce operators - tracks price, availability, delivery promise, and assortment gaps across Amazon, Walmart, Target, and more via Apify scraping.",
@@ -54,14 +62,6 @@ export const projects = [
     link: "https://github.com/ayushkh-code/microlearning_digest",
     appLink: null,
     wip: true,
-  },
-  {
-    title: "Gripe",
-    description:
-      "See what customers complain about - LinkedIn complaint themes by sector and cafe, refreshed weekly, with sample posts and Excel export.",
-    link: null,
-    appLink: "https://gripe-gilt.vercel.app",
-    wip: false,
   },
   {
     title: "Halo",
