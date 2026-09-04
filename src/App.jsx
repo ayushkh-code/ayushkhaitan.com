@@ -6,6 +6,7 @@ import Writing from "./pages/Writing";
 import Article from "./pages/Article";
 import Projects from "./pages/Projects";
 import JobSearch from "./pages/JobSearch";
+import AiPrompting from "./pages/AiPrompting";
 import About from "./pages/About";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/writing/:slug" element={<Article />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/job-search" element={<JobSearch />} />
+          <Route path="/ai-prompting" element={<AiPrompting />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>
