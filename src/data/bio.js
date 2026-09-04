@@ -1,8 +1,9 @@
 export const bioParagraphs = [
-  "I am a Director-level Strategy, Finance & Operations leader with 14+ years of experience driving enterprise planning, transformation, and execution across complex organizations. My work centres around strategy, operations, and finance, helping senior leaders make high-stakes decisions with clarity and speed.",
-  "At Amazon, I've led annual and multi-quarter planning mechanisms, KPI systems, and executive decision cadences across a 4.5B unit platform spanning 400+ nodes. I turn ambiguous problems into structured analyses, clear priorities, and operating models that scale while balancing growth, cost, service, and risk.",
-  "My strength is not just analysis but follow-through, building governance, metrics, and operating rhythms that translate decisions into sustained execution across Product, Engineering, Finance, Marketing, and Operations.",
-  "I am open to Director or Senior Director roles in Strategy, Business Operations, Supply Chain & Operations, or Strategic Finance, where I can help organizations navigate complexity, drive alignment, and deliver measurable outcomes at scale.",
+  "I build supply chain networks that make fast delivery economically viable.",
+  "Most recently as Principal at Amazon, I owned S&OP, inventory, and network strategy for a 4.5B unit, 370+ node North America platform. I led the cross-functional program strategy that launched 100+ quick commerce forward-deployment nodes across Tier 1 to Tier 3 US cities, coordinating Product, Engineering, and Operations against a $300M capex plan. Incrementally, I've delivered $360M in annualized value through portfolio prioritization and $400M+ in outbound transportation savings through inventory placement optimization.",
+  "My background is finance before operations: an MBA in finance, valuation work at Deloitte, FP&A at Pandora. This is why my supply chain work runs on driver-based models and unit economics rather than intuition, and why the tradeoff conversations with Finance tend to proceed quickly.",
+  "The common denominator in every role has been building the operating system around the decisions: leading and lagging indicators, KPI instrumentation, executive cadences, scorecards. Analysis is useful only if the organization actually acts on it, and that's where I spend most of my time.",
+  "I'm in Bangalore and available immediately, looking at Director and Senior Director roles in supply chain, operations, and strategy, particularly with quick commerce and e-commerce operators scaling low-ASP fulfillment.",
 ];
 
 export const metaDescription = bioParagraphs.slice(0, 2).join(" ");

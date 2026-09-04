@@ -40,6 +40,14 @@ export default function About() {
           >
             linkedin.com/in/ayushkhaitan
           </a>
+          <a
+            href={contact.substack}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-accent"
+          >
+            substack.com/@lastmileeconomist
+          </a>
         </div>
       </section>
     </div>
