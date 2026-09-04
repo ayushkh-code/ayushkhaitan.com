@@ -42,10 +42,24 @@ function AiPromptCard({ prompt }) {
 
   return (
     <li className="rounded-sm border border-border bg-background p-6 shadow-sm">
-      <h2 className="font-serif text-xl text-text-primary">{prompt.title}</h2>
-      <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-        {prompt.description}
-      </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <h2 className="font-serif text-xl text-text-primary">{prompt.title}</h2>
+        {prompt.githubLink && (
+          <a
+            href={prompt.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-accent text-sm"
+          >
+            View on GitHub
+          </a>
+        )}
+      </div>
+      {prompt.description && (
+        <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+          {prompt.description}
+        </p>
+      )}
       <div className="mt-5 flex flex-wrap gap-3">
         <button
           type="button"

@@ -1,3 +1,5 @@
+import { jobSearchPrompts } from "./jobSearchResources";
+
 export const aiPrompts = [
   {
     slug: "interview-prep-research-assistant",
@@ -29,4 +31,5 @@ Also answer on demand for any target company: draft individual pieces (backgroun
 
 Tone: operator voice, direct and substantive, no filler. Every section should give me something I could actually say in the room. Be honest about fit and gaps rather than flattering. Writing rules: no em dashes, and avoid the "not X, it's Y" construction.`,
   },
+  ...jobSearchPrompts,
 ];
