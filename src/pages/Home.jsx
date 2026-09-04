@@ -53,14 +53,23 @@ export default function Home() {
               className="mt-10"
             />
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/writing" className="btn-primary text-sm">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <Link
+                to="/writing"
+                className="rounded-full bg-accent px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-accent-light"
+              >
                 Writing
               </Link>
-              <Link to="/projects" className="btn-primary text-sm">
+              <Link
+                to="/projects"
+                className="rounded-full bg-accent px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-accent-light"
+              >
                 Projects
               </Link>
-              <Link to="/ai-prompting" className="btn-primary text-sm">
+              <Link
+                to="/ai-prompting"
+                className="rounded-full bg-accent px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-accent-light"
+              >
                 AI prompting
               </Link>
             </div>

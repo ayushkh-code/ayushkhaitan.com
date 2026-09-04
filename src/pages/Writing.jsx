@@ -10,10 +10,7 @@ export default function Writing() {
   return (
     <div className="page-shell">
       <section className="page-hero">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
-          Essays
-        </p>
-        <h1 className="mt-4 font-serif text-4xl tracking-tight text-text-primary">
+        <h1 className="font-serif text-4xl tracking-tight text-text-primary">
           Writing
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-text-secondary">

@@ -8,7 +8,7 @@ const navItems = [
   { to: "/about", label: "About" },
 ];
 
-function SubstackIcon({ className = "h-4 w-4" }) {
+function SubstackIcon({ className = "h-3.5 w-3.5" }) {
   return (
     <svg
       className={className}
@@ -34,7 +34,7 @@ export default function Nav() {
               Ayush Khaitan
             </NavLink>
 
-            <div className="flex items-center gap-4 text-sm lg:hidden">
+            <div className="flex items-center gap-3 text-xs lg:hidden">
               <a href={`mailto:${contact.email}`} className="nav-contact-link">
                 Email
               </a>
@@ -61,7 +61,7 @@ export default function Nav() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:justify-end">
             <nav aria-label="Main navigation">
-              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <ul className="flex flex-wrap items-end gap-x-2 gap-y-2 text-sm">
                 {navItems.map(({ to, label, end }) => (
                   <li key={to}>
                     <NavLink
@@ -78,7 +78,7 @@ export default function Nav() {
               </ul>
             </nav>
 
-            <div className="hidden items-center gap-4 border-l border-white/15 pl-6 text-sm lg:flex">
+            <div className="hidden items-center gap-3 border-l border-white/15 pl-6 text-xs lg:flex">
               <a
                 href={`mailto:${contact.email}`}
                 className="nav-contact-link"
