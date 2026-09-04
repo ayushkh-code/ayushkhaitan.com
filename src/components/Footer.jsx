@@ -20,6 +20,14 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            href={contact.substack}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-text-on-dark"
+          >
+            Substack
+          </a>
         </div>
       </div>
     </footer>

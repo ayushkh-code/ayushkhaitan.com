@@ -8,6 +8,19 @@ const navItems = [
   { to: "/about", label: "About" },
 ];
 
+function SubstackIcon({ className = "h-4 w-4" }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+    </svg>
+  );
+}
+
 export default function Nav() {
   return (
     <header className="bg-surface-dark text-text-on-dark">
@@ -32,6 +45,16 @@ export default function Nav() {
                 className="nav-contact-link"
               >
                 LinkedIn
+              </a>
+              <a
+                href={contact.substack}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-contact-link inline-flex items-center gap-1.5"
+                aria-label="Substack"
+              >
+                <SubstackIcon />
+                Substack
               </a>
             </div>
           </div>
@@ -69,6 +92,16 @@ export default function Nav() {
                 className="nav-contact-link"
               >
                 LinkedIn
+              </a>
+              <a
+                href={contact.substack}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-contact-link inline-flex items-center gap-1.5"
+                aria-label="Substack"
+              >
+                <SubstackIcon />
+                Substack
               </a>
             </div>
           </div>

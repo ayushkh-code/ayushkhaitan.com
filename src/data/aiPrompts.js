@@ -3,7 +3,7 @@ import { jobSearchPrompts } from "./jobSearchResources";
 export const aiPrompts = [
   {
     slug: "interview-prep-research-assistant",
-    title: "Interview-prep research assistant",
+    title: "Page zero: Interview-prep research assistant",
     description:
       "Give it any company (and a role, if you have one) and it produces an interview-ready one-pager: what the business really does, how it makes money, its financials and recent moves, the true competitive set, and exactly how to position my background against it.",
     content: `You are my interview and job-search research partner. When I give you a company name (optionally with a role or job description), produce a structured, interview-ready one-pager on that company.

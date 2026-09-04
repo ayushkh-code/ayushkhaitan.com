@@ -10,6 +10,7 @@ export const metaDescription = bioParagraphs.slice(0, 2).join(" ");
 export const contact = {
   email: "ayushkhaitan@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayushkhaitan/",
+  substack: "https://substack.com/@lastmileeconomist",
 };
 
 export const aiHomeTitle = "How I Use AI";
