@@ -61,7 +61,7 @@ export default function Nav() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:justify-end">
             <nav aria-label="Main navigation">
-              <ul className="flex flex-wrap items-end gap-x-2 gap-y-2 text-sm">
+              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
                 {navItems.map(({ to, label, end }) => (
                   <li key={to}>
                     <NavLink

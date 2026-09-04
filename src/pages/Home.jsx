@@ -30,8 +30,8 @@ const previewCards = [
 
 export default function Home() {
   return (
-    <div className="page-shell">
-      <section className="page-hero">
+    <div className="mx-auto max-w-5xl px-6 pb-16 pt-2">
+      <section className="-mx-6 bg-surface px-6 pb-12 pt-1.5 sm:rounded-sm sm:px-10">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
