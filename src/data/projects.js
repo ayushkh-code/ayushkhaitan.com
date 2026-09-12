@@ -16,14 +16,6 @@ export const projects = [
     wip: true,
   },
   {
-    title: "Polygon",
-    description:
-      "Catchment polygons and coverage for dark-store networks.",
-    link: null,
-    appLink: null,
-    wip: true,
-  },
-  {
     title: "Where to Build — Financial Estimator",
     description:
       "Center-of-gravity siting to estimate outbound freight savings.",
@@ -128,9 +120,9 @@ export const projects = [
     wip: false,
   },
   {
-    title: "Halo",
+    title: "Polygon",
     description:
-      "Catchment and cannibalization for candidate warehouse locations.",
+      "Catchment and cannibalization for candidate dark-store locations.",
     link: "https://github.com/ayushkh-code/qc-halo",
     appLink: "https://qc-halo.vercel.app",
     wip: false,
