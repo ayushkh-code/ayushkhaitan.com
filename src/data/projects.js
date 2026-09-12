@@ -36,7 +36,7 @@ export const projects = [
     description:
       "Prioritize the next dark-store build against coverage gaps and demand.",
     link: null,
-    appLink: null,
+    appLink: "https://the-next-dark-store-planner.vercel.app/",
     wip: true,
   },
   {
