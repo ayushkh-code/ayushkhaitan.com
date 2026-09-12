@@ -23,7 +23,7 @@ export default function Projects() {
       {liveProjects.length > 0 && (
         <section className="mt-12">
           <h2 className="font-serif text-2xl text-text-primary">Live</h2>
-          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {liveProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -39,7 +39,7 @@ export default function Projects() {
           <p className="mt-2 text-sm text-text-secondary">
             Active builds - not yet deployed or still being refined.
           </p>
-          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {wipProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -51,7 +51,7 @@ export default function Projects() {
         <h2 className="font-serif text-2xl text-text-primary">
           Tools for job searchers
         </h2>
-        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <li>
             <a
               href="https://ai-job-search-toolkit-ten.vercel.app"
