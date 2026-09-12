@@ -130,7 +130,7 @@ export const projects = [
   {
     title: "Halo",
     description:
-      "Catchment and cannibalization for candidate dark-store locations.",
+      "Catchment and cannibalization for candidate warehouse locations.",
     link: "https://github.com/ayushkh-code/qc-halo",
     appLink: "https://qc-halo.vercel.app",
     wip: false,
