@@ -1,0 +1,16 @@
+---
+description: Always deploy ayushkhaitan.com to production after changes
+alwaysApply: true
+---
+
+# Deploy to production by default
+
+After completing requested site changes for ayushkhaitan.com:
+
+1. Commit the changes (concise message).
+2. Deploy production immediately with:
+   `npx vercel deploy --prod --yes --scope ayushkhaitan`
+3. Do not ask whether to go live, push live, or wait for approval.
+4. Do not add a local-preview-then-prod workflow.
+
+Only hold off on deploy if the user explicitly says local-only, draft, or hold deploy.
