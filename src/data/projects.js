@@ -32,14 +32,6 @@ export const projects = [
     wip: true,
   },
   {
-    title: "The next Dark store planner",
-    description:
-      "Prioritize the next dark-store build against coverage gaps and demand.",
-    link: null,
-    appLink: "https://the-next-dark-store-planner.vercel.app/",
-    wip: true,
-  },
-  {
     title: "Peak Playbook",
     description:
       "Capacity, inventory, and labor plays for peak demand surges.",
@@ -126,6 +118,14 @@ export const projects = [
     link: "https://github.com/ayushkh-code/microlearning_digest",
     appLink: null,
     wip: true,
+  },
+  {
+    title: "The next Dark store planner",
+    description:
+      "Prioritize the next dark-store build against coverage gaps and demand (currently built for Bangalore geography).",
+    link: null,
+    appLink: "https://the-next-dark-store-planner.vercel.app/",
+    wip: false,
   },
   {
     title: "Halo",
