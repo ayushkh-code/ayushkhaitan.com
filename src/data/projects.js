@@ -2,17 +2,81 @@ export const projects = [
   {
     title: "Supply Chain Suite",
     description:
-      "Executive portfolio of S&OP, network, inventory, and supplier tools for supply chain VPs - forecast error economics, facility siting, safety stock, SKU rationalization, and more in one dashboard.",
+      "Thirteen decision models for supply chain leaders. Each one answers a question a VP actually asks, with the financial impact up front. Pick a tool, plug in your numbers, get an answer in minutes.",
     link: null,
-    appLink: null,
+    appLink: "https://supply-chain-suite-nu.vercel.app",
     wip: true,
   },
   {
     title: "Gripe",
     description:
-      "See what customers complain about - LinkedIn complaint themes by sector and cafe, refreshed weekly, with sample posts and Excel export.",
+      "See what customers complain about - themes by sector and cafe, refreshed weekly.",
     link: null,
     appLink: "https://gripe-gilt.vercel.app",
+    wip: true,
+  },
+  {
+    title: "Polygon",
+    description:
+      "Catchment polygons and coverage for dark-store networks.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "Where to Build — Financial Estimator",
+    description:
+      "Center-of-gravity siting to estimate outbound freight savings.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "The next Dark store planner",
+    description:
+      "Prioritize the next dark-store build against coverage gaps and demand.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "Peak Playbook",
+    description:
+      "Capacity, inventory, and labor plays for peak demand surges.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "Freight Mode Mix",
+    description:
+      "Cost versus lead time across Air, LTL, FTL and Parcel.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "E2E Process Optimizer",
+    description:
+      "Map bottlenecks and handoffs from purchase order to delivery to cut cycle time and landed cost.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "Safety stock Calculator",
+    description:
+      "Optimal safety stock across raw, WIP and finished goods.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
+    title: "Inventory Health Optimizer",
+    description:
+      "Local in-stock %, weeks of cover, and turns in one health view.",
+    link: null,
+    appLink: null,
     wip: true,
   },
   {
@@ -42,7 +106,7 @@ export const projects = [
   {
     title: "Cost of Forecast Error",
     description:
-      "Translates forecast error in basis points into labor cost for forecast-to-staffing operations - models asymmetric over-staffing (VTO) vs under-staffing (overtime) with tolerance bands, flex absorption, and a live calc trace.",
+      "Translate WAPE into a P&L penalty using unit economics.",
     link: null,
     appLink: "https://cost-of-forecast-error.vercel.app",
     wip: true,
@@ -66,7 +130,7 @@ export const projects = [
   {
     title: "Halo",
     description:
-      "Quick-commerce catchment simulator for Bangalore - drag a candidate dark store across 198 BBMP wards shaded by 2011 census density, then watch net-new orders vs cannibalization update live against 443 real store positions.",
+      "Catchment and cannibalization for candidate dark-store locations.",
     link: "https://github.com/ayushkh-code/qc-halo",
     appLink: "https://qc-halo.vercel.app",
     wip: false,
