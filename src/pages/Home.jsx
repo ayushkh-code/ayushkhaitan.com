@@ -21,6 +21,12 @@ const previewCards = [
       "Side projects and tools built to solve practical operational problems.",
   },
   {
+    to: "/products",
+    title: "Products",
+    description:
+      "Prompts, workflows, and templates organized by category. Buy once, run yourself.",
+  },
+  {
     to: "/about",
     title: "About & Contact",
     description:
@@ -97,7 +103,7 @@ export default function Home() {
           <h2 className="font-serif text-2xl text-text-primary">Explore</h2>
           <div className="h-px flex-1 bg-accent/30" aria-hidden="true" />
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {previewCards.map((card) => (
             <Link key={card.to} to={card.to} className="preview-card group">
               <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
