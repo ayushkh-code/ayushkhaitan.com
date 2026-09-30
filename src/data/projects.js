@@ -1,8 +1,16 @@
 export const projects = [
   {
+    title: "The next Dark store planner",
+    description:
+      "Prioritize the next dark-store build against coverage gaps and demand (currently built for Bangalore geography).",
+    link: null,
+    appLink: "https://the-next-dark-store-planner.vercel.app/",
+    wip: false,
+  },
+  {
     title: "Supply Chain Suite",
     description:
-      "Thirteen decision models for supply chain leaders. Each one answers a question a VP actually asks, with the financial impact up front. Pick a tool, plug in your numbers, get an answer in minutes.",
+      "Fourteen decision models for supply chain leaders. Each one answers a question a VP actually asks, with the financial impact up front. Pick a tool, plug in your numbers, get an answer in minutes.",
     link: null,
     appLink: "https://supply-chain-suite-nu.vercel.app",
     wip: true,
@@ -72,6 +80,14 @@ export const projects = [
     wip: true,
   },
   {
+    title: "Last mile process auditor",
+    description:
+      "Audit last-mile delivery processes against SLA, cost, and customer promise.",
+    link: null,
+    appLink: null,
+    wip: true,
+  },
+  {
     title: "Can't Find It",
     description:
       "Crowdsourced demand intelligence - users log products they can't find online, and the app aggregates submissions into a live, gamified demand map.",
@@ -110,14 +126,6 @@ export const projects = [
     link: "https://github.com/ayushkh-code/microlearning_digest",
     appLink: null,
     wip: true,
-  },
-  {
-    title: "The next Dark store planner",
-    description:
-      "Prioritize the next dark-store build against coverage gaps and demand (currently built for Bangalore geography).",
-    link: null,
-    appLink: "https://the-next-dark-store-planner.vercel.app/",
-    wip: false,
   },
   {
     title: "Polygon",

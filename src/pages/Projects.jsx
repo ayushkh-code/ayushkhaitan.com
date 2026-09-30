@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { jobSearchPrompts } from "../data/jobSearchResources";
+import { agentSkills } from "../data/agentSkills";
 
 export default function Projects() {
   const wipProjects = projects.filter((p) => p.wip);
@@ -46,6 +47,29 @@ export default function Projects() {
           </ul>
         </section>
       )}
+
+      <section className="mt-12">
+        <h2 className="font-serif text-2xl text-text-primary">
+          Skills for AI agents
+        </h2>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {agentSkills.map((skill) => (
+            <li key={skill.slug}>
+              <Link
+                to={`/projects/agent-skills#${skill.slug}`}
+                className="preview-card group block h-full"
+              >
+                <h3 className="font-serif text-xl text-text-primary group-hover:text-accent">
+                  {skill.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                  {skill.summary}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mt-12">
         <h2 className="font-serif text-2xl text-text-primary">
