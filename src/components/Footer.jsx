@@ -1,4 +1,5 @@
 import { contact } from "../data/bio";
+import LinkedInIcon from "./LinkedInIcon";
 
 export default function Footer() {
   return (
@@ -16,9 +17,10 @@ export default function Footer() {
             href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-text-on-dark"
+            className="inline-flex items-center transition-colors hover:text-text-on-dark"
+            aria-label="LinkedIn"
           >
-            LinkedIn
+            <LinkedInIcon />
           </a>
           <a
             href={contact.substack}

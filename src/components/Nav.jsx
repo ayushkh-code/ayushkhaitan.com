@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { contact } from "../data/bio";
+import LinkedInIcon from "./LinkedInIcon";
 
 const navItems = [
   { to: "/", label: "Home", end: true },
@@ -57,8 +58,9 @@ export default function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-contact-link"
+                aria-label="LinkedIn"
               >
-                LinkedIn
+                <LinkedInIcon />
               </a>
               <a
                 href={contact.substack}
@@ -105,8 +107,9 @@ export default function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-contact-link"
+                aria-label="LinkedIn"
               >
-                LinkedIn
+                <LinkedInIcon />
               </a>
               <a
                 href={contact.substack}
