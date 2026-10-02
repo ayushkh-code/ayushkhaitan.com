@@ -55,7 +55,7 @@ export default function Home() {
 
             <ReadMoreParagraphs
               paragraphs={bioParagraphs}
-              previewCount={1}
+              previewCount={2}
               className="mt-10"
             />
 
