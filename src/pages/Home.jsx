@@ -89,6 +89,13 @@ export default function Home() {
                 previewCount={3}
                 className="mt-6"
               />
+              <p className="mt-6 text-[1.0625rem] leading-relaxed text-text-primary">
+                See{" "}
+                <Link to="/projects" className="link-accent font-medium">
+                  here
+                </Link>{" "}
+                for all my projects.
+              </p>
             </section>
           </div>
 
