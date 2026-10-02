@@ -12,6 +12,7 @@ export const contact = {
   email: "ayushkhaitan@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayushkhaitan/",
   substack: "https://substack.com/@lastmileeconomist",
+  topmate: "https://topmate.io/ayushkhaitan",
 };
 
 export const aiHomeTitle = "How I Use AI";

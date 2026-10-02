@@ -22,6 +22,19 @@ function SubstackIcon({ className = "h-3.5 w-3.5" }) {
   );
 }
 
+function TopmateLink() {
+  return (
+    <a
+      href={contact.topmate}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-full border border-accent-light px-3 py-1 font-medium text-text-on-dark transition-colors hover:bg-accent-light hover:text-white"
+    >
+      Topmate
+    </a>
+  );
+}
+
 export default function Nav() {
   return (
     <header className="bg-surface-dark text-text-on-dark">
@@ -57,6 +70,7 @@ export default function Nav() {
                 <SubstackIcon />
                 Substack
               </a>
+              <TopmateLink />
             </div>
           </div>
 
@@ -104,6 +118,7 @@ export default function Nav() {
                 <SubstackIcon />
                 Substack
               </a>
+              <TopmateLink />
             </div>
           </div>
         </div>
