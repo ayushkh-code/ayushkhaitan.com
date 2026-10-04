@@ -128,9 +128,9 @@ export const projects = [
     wip: true,
   },
   {
-    title: "Polygon",
+    title: "Polygon - India dark store coverage",
     description:
-      "Catchment and cannibalization for candidate dark-store locations.",
+      "Catchment and cannibalization for candidate dark-store locations (currently built for Bangalore geography).",
     link: "https://github.com/ayushkh-code/qc-halo",
     appLink: "https://qc-halo.vercel.app",
     wip: false,
