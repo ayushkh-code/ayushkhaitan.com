@@ -6,6 +6,7 @@ export const JOIN_FORM = "https://forms.gle/vLyd9eVqJ2sq4wcs6";
     Use null for a date that isn't set yet; the card shows "TBD" and stays listed after dated events.
   - type: 'meetup' | 'webinar' | 'roundtable'
   - url: optional registration link. Defaults to the join form.
+  - signupNote: optional sentence shown instead of the sign-up button, followed by a linked "here".
 */
 export const EVENTS = [
   {
@@ -18,7 +19,8 @@ export const EVENTS = [
     place: "Indiranagar, Bangalore",
     venueNote: "Venue shared on RSVP.",
     format: "Three short talks, then open discussion",
-    seats: 40,
+    seats: 10,
+    signupNote: "To receive information on this event, please fill up the form",
   },
   {
     date: null,

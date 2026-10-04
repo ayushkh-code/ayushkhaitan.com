@@ -63,6 +63,7 @@ function eventView(e) {
     format: e.format,
     seats: e.seats ? String(e.seats) : "Open",
     cta: CTA[e.type],
+    signupNote: e.signupNote,
     url: e.url || JOIN_FORM,
   };
 }
@@ -107,6 +108,14 @@ function PlusIcon() {
   );
 }
 
+function SignupNote({ text, url }) {
+  return (
+    <p className="ic-signup-note">
+      {text} <a href={url}>here</a>.
+    </p>
+  );
+}
+
 function EventCard({ event, hidden }) {
   const v = eventView(event);
   const leaders = event.type === "roundtable";
@@ -136,10 +145,14 @@ function EventCard({ event, hidden }) {
             <span>{v.time}</span>
           </span>
         </div>
-        <a className="ic-link" href={v.url}>
-          <span>{v.cta}</span>
-          <ArrowIcon size={16} />
-        </a>
+        {v.signupNote ? (
+          <SignupNote text={v.signupNote} url={v.url} />
+        ) : (
+          <a className="ic-link" href={v.url}>
+            <span>{v.cta}</span>
+            <ArrowIcon size={16} />
+          </a>
+        )}
       </div>
     </article>
   );
@@ -167,10 +180,14 @@ function NextUp({ event }) {
               <div><dt>Format</dt><dd>{v.format}</dd></div>
               <div><dt>Seats</dt><dd>{v.seats}</dd></div>
             </dl>
-            <a className="ic-btn ic-btn--primary" href={v.url}>
-              <span>{v.cta}</span>
-              <ArrowIcon />
-            </a>
+            {v.signupNote ? (
+              <SignupNote text={v.signupNote} url={v.url} />
+            ) : (
+              <a className="ic-btn ic-btn--primary" href={v.url}>
+                <span>{v.cta}</span>
+                <ArrowIcon />
+              </a>
+            )}
           </div>
         </article>
       </div>
