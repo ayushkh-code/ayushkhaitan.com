@@ -266,12 +266,13 @@ export default function InnerCircle() {
       </section>
 
       {/* ===== Origin ===== */}
-      <section className="ic-origin" aria-label="How it started">
+      <section className="ic-origin" aria-labelledby="ic-origin-label">
         <div className="ic-wrap">
           <p className="ic-origin__num" aria-hidden="true">500+</p>
           <div className="ic-origin__text">
+            <p className="ic-eyebrow" id="ic-origin-label">How did this start?</p>
             <p className="ic-origin__headline"><span className="ic-visually-hidden">500+ </span>supply chain professionals reached out after one LinkedIn post.</p>
-            <p className="ic-origin__body">That was the signal. The Inner Circle is where those conversations keep going, in rooms small enough for everyone to speak.</p>
+            <p className="ic-origin__body">What started as a simple idea to give back showed me how many people are looking to connect with like-minded professionals in their field. So I decided to build this.</p>
           </div>
         </div>
       </section>
