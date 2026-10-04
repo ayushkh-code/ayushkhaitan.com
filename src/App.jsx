@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import JobSearch from "./pages/JobSearch";
 import AgentSkills from "./pages/AgentSkills";
 import AiPrompting from "./pages/AiPrompting";
+import InnerCircle from "./pages/InnerCircle";
 import About from "./pages/About";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/projects/job-search" element={<JobSearch />} />
           <Route path="/projects/agent-skills" element={<AgentSkills />} />
           <Route path="/ai-prompting" element={<AiPrompting />} />
+          <Route path="/inner-circle" element={<InnerCircle />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>

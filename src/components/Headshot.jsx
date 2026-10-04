@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const HEADSHOT_SRC = "/headshot.jpg";
+export const HEADSHOT_SRC = "/headshot.jpg";
 
 export default function Headshot({
   className = "h-48 w-48",
