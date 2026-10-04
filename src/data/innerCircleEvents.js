@@ -3,6 +3,7 @@ export const JOIN_FORM = "https://forms.gle/vLyd9eVqJ2sq4wcs6";
 /*
   SAMPLE EVENTS: replace dates, topics and venues with real ones before publishing.
   - date: YYYY-MM-DD (India time). An event disappears the day after it happens.
+    Use null for a date that isn't set yet; the card shows "TBD" and stays listed after dated events.
   - type: 'meetup' | 'webinar' | 'roundtable'
   - url: optional registration link. Defaults to the join form.
 */
@@ -20,7 +21,7 @@ export const EVENTS = [
     seats: 40,
   },
   {
-    date: "2026-10-29",
+    date: null,
     start: "7:00 PM",
     end: "8:00 PM",
     type: "webinar",
@@ -32,7 +33,7 @@ export const EVENTS = [
     seats: null,
   },
   {
-    date: "2026-11-07",
+    date: null,
     start: "9:00 AM",
     end: "11:00 AM",
     type: "roundtable",
@@ -44,19 +45,7 @@ export const EVENTS = [
     seats: 12,
   },
   {
-    date: "2026-11-26",
-    start: "7:00 PM",
-    end: "8:00 PM",
-    type: "webinar",
-    title: "S&OP for fast-growing companies",
-    topic: "Running a monthly cycle when demand doubles every year",
-    place: "Online",
-    venueNote: "Link sent when you register.",
-    format: "Talk and live Q&A",
-    seats: null,
-  },
-  {
-    date: "2026-12-05",
+    date: null,
     start: "10:00 AM",
     end: "12:30 PM",
     type: "meetup",
@@ -68,7 +57,7 @@ export const EVENTS = [
     seats: 40,
   },
   {
-    date: "2026-12-12",
+    date: null,
     start: "9:00 AM",
     end: "11:00 AM",
     type: "roundtable",

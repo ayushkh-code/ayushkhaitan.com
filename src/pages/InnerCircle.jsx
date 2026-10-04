@@ -30,17 +30,26 @@ const FILTERS = [
   { id: "online", label: "Online" },
 ];
 
-function eventView(e) {
+function dateParts(date) {
+  if (!date) {
+    return { day: "TBD", month: "", monthLong: "", weekday: "", weekdayLong: "" };
+  }
   // Noon India time keeps the calendar date stable in any visitor's timezone.
-  const d = new Date(`${e.date}T12:00:00+05:30`);
-  const online = e.type === "webinar";
-  const ist = online ? " IST" : "";
+  const d = new Date(`${date}T12:00:00+05:30`);
   return {
     day: String(d.getUTCDate()),
     month: MONTHS[d.getUTCMonth()],
     monthLong: MONTHS_LONG[d.getUTCMonth()],
     weekday: DAYS[d.getUTCDay()],
     weekdayLong: DAYS_LONG[d.getUTCDay()],
+  };
+}
+
+function eventView(e) {
+  const online = e.type === "webinar";
+  const ist = online ? " IST" : "";
+  return {
+    ...dateParts(e.date),
     startTime: e.start + ist,
     kind: KIND[e.type],
     access: e.type === "roundtable" ? "Director+" : "Open",
@@ -66,8 +75,11 @@ function matchesFilter(type, filter) {
 }
 
 function upcomingEvents(now) {
-  return EVENTS.filter((e) => new Date(`${e.date}T23:59:59+05:30`) >= now).sort(
-    (a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0),
+  return EVENTS.filter((e) => !e.date || new Date(`${e.date}T23:59:59+05:30`) >= now).sort(
+    (a, b) => {
+      if (!a.date || !b.date) return (a.date ? 0 : 1) - (b.date ? 0 : 1);
+      return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+    },
   );
 }
 
@@ -143,7 +155,7 @@ function NextUp({ event }) {
           <div className="ic-ticket__date">
             <p className="ic-ticket__month">{v.monthLong}</p>
             <p className="ic-ticket__day">{v.day}</p>
-            <p className="ic-ticket__when"><span>{v.weekdayLong}</span><br /><span>{v.startTime}</span></p>
+            <p className="ic-ticket__when">{v.weekdayLong && <><span>{v.weekdayLong}</span><br /></>}<span>{v.startTime}</span></p>
           </div>
           <div className="ic-ticket__body">
             <span className="ic-chip">Open to all</span>
