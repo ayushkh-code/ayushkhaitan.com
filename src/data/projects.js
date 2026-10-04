@@ -13,7 +13,7 @@ export const projects = [
       "Fourteen decision models for supply chain leaders. Each one answers a question a VP actually asks, with the financial impact up front. Pick a tool, plug in your numbers, get an answer in minutes.",
     link: null,
     appLink: "https://supply-chain-suite-nu.vercel.app",
-    wip: true,
+    wip: false,
   },
   {
     title: "Gripe",
