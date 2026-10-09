@@ -142,9 +142,6 @@
 .ic-room__label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ic-olive); }
 .ic-room--leaders .ic-room__label { color: var(--ic-on-dark-2); }
 .ic-room h3 { margin: 22px 0 0; font-family: var(--ic-serif); font-weight: 400; font-size: 30px; line-height: 1.15; }
-.ic-formats { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
-.ic-formats li { display: flex; align-items: baseline; gap: 12px; font-family: var(--ic-serif); font-size: 21px; line-height: 1.3; }
-.ic-formats li::before { content: ""; flex: 0 0 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--ic-olive-mid); transform: translateY(-3px); }
 .ic-room__desc { margin: 12px 0 0; color: var(--ic-muted); }
 .ic-room--leaders .ic-room__desc { color: var(--ic-on-dark-muted); }
 .ic-facts { margin: 24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; font-size: 14px; }

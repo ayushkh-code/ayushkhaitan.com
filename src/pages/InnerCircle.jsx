@@ -307,19 +307,13 @@ export default function InnerCircle() {
                 </span>
                 <span className="ic-room__label">Open to all</span>
               </div>
-              <ul className="ic-formats" aria-label="Formats">
+              <p className="ic-room__desc">Meetups and webinars on the questions this community asks most, led by practitioners.</p>
+              <ul className="ic-facts ic-facts--perks">
                 <li>Meetups &amp; Webinars</li>
                 <li>Group case study of a supply chain problem</li>
                 <li>In-person meetups</li>
                 <li>Speaker sessions</li>
               </ul>
-              <p className="ic-room__desc">Meetups and webinars on the questions this community asks most, led by practitioners.</p>
-              <dl className="ic-facts">
-                <div><dt>Format</dt><dd>Meetups and webinars</dd></div>
-                <div><dt>Seats</dt><dd>Up to 40 in person</dd></div>
-                <div><dt>Speakers</dt><dd>Practitioners only</dd></div>
-                <div><dt>Cost</dt><dd>Free, always</dd></div>
-              </dl>
               <div className="ic-room__foot">
                 <a className="ic-link" href="#events">
                   See upcoming events
