@@ -145,14 +145,15 @@ function EventCard({ event, hidden }) {
             <span>{v.time}</span>
           </span>
         </div>
-        {v.signupNote ? (
-          <SignupNote text={v.signupNote} url={v.url} />
-        ) : (
-          <a className="ic-link" href={v.url}>
-            <span>{v.cta}</span>
-            <ArrowIcon size={16} />
-          </a>
-        )}
+        {event.url &&
+          (v.signupNote ? (
+            <SignupNote text={v.signupNote} url={v.url} />
+          ) : (
+            <a className="ic-link" href={v.url}>
+              <span>{v.cta}</span>
+              <ArrowIcon size={16} />
+            </a>
+          ))}
       </div>
     </article>
   );
@@ -241,11 +242,11 @@ function Calendar({ events }) {
               hidden={!matchesFilter(event.type, filter)}
             />
           ))}
-          <a className="ic-suggest" href={JOIN_FORM}>
+          <a className="ic-suggest" href="mailto:ayushkhaitan@gmail.com">
             <span className="ic-suggest__title">Want a topic on the calendar?</span>
-            <span className="ic-suggest__text">Suggest it in the join form. The most requested topics get the next slots.</span>
+            <span className="ic-suggest__text">The most requested topics get the next slots.</span>
             <span className="ic-suggest__cta">
-              Suggest a topic
+              Suggest a topic by emailing ayushkhaitan@gmail.com
               <ArrowIcon size={16} />
             </span>
           </a>

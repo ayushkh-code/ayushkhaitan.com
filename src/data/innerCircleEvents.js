@@ -7,7 +7,7 @@ export const LEADERS_FORM =
   - date: YYYY-MM-DD (India time). An event disappears the day after it happens.
     Use null for a date that isn't set yet; the card shows "TBD" and stays listed after dated events.
   - type: 'meetup' | 'webinar' | 'roundtable'
-  - url: optional registration link. Defaults to the join form.
+  - url: optional registration link. Calendar cards without one show no sign-up link.
   - signupNote: optional sentence shown instead of the sign-up button, followed by a linked "here".
 */
 export const EVENTS = [
