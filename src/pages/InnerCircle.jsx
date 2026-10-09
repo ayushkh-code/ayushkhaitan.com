@@ -290,16 +290,6 @@ export default function InnerCircle() {
         </div>
       </section>
 
-      {/* ===== Origin ===== */}
-      <section className="ic-origin" aria-labelledby="ic-origin-label">
-        <div className="ic-wrap">
-          <div className="ic-origin__text">
-            <p className="ic-eyebrow" id="ic-origin-label">How did this start?</p>
-            <p className="ic-origin__body">I wanted to give back to the community, so I offered to take on three mentees. More than 500 supply chain professionals reached out after that one LinkedIn post. The response showed me how many people are looking to connect with like-minded professionals in their field, so I decided to build this.</p>
-          </div>
-        </div>
-      </section>
-
       {/* ===== Two kinds of rooms ===== */}
       <section className="ic-section" aria-labelledby="ic-rooms-title">
         <div className="ic-wrap">
@@ -456,6 +446,23 @@ export default function InnerCircle() {
               <p>Join through the form and event invites come straight to your inbox.</p>
             </details>
           </div>
+        </div>
+      </section>
+
+      {/* ===== Origin ===== */}
+      <section className="ic-origin" aria-label="How did this start?">
+        <div className="ic-wrap">
+          <details className="ic-origin__card">
+            <summary>
+              <span className="ic-origin__title">How did this start?</span>
+              <span className="ic-origin__toggle">
+                <span className="ic-origin__toggle-closed">Read the story</span>
+                <span className="ic-origin__toggle-open">Close</span>
+                <PlusIcon />
+              </span>
+            </summary>
+            <p className="ic-origin__body">I wanted to give back to the community, so I offered to take on three mentees. More than 500 supply chain professionals reached out after that one LinkedIn post. The response showed me how many people are looking to connect with like-minded professionals in their field, so I decided to build this.</p>
+          </details>
         </div>
       </section>
 
