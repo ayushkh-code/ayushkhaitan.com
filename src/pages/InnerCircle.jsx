@@ -293,11 +293,9 @@ export default function InnerCircle() {
       {/* ===== Origin ===== */}
       <section className="ic-origin" aria-labelledby="ic-origin-label">
         <div className="ic-wrap">
-          <p className="ic-origin__num" aria-hidden="true">500+</p>
           <div className="ic-origin__text">
             <p className="ic-eyebrow" id="ic-origin-label">How did this start?</p>
-            <p className="ic-origin__headline"><span className="ic-visually-hidden">500+ </span>supply chain professionals reached out after one LinkedIn post.</p>
-            <p className="ic-origin__body">What started as a simple idea to give back showed me how many people are looking to connect with like-minded professionals in their field. So I decided to build this.</p>
+            <p className="ic-origin__body">I wanted to give back to the community, so I offered to take on three mentees. More than 500 supply chain professionals reached out after that one LinkedIn post. The response showed me how many people are looking to connect with like-minded professionals in their field, so I decided to build this.</p>
           </div>
         </div>
       </section>
