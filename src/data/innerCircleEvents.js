@@ -23,7 +23,7 @@ export const EVENTS = [
     format: "Individual intros, open discussion on a supply chain problem",
     seats: 10,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSc1iLQaaEMcoWq2GjEvG4LjU5crHY2RGdU4iyvmWvGw92-wzA/viewform",
-    signupNote: "To receive information on this event, please fill up the form",
+    signupNote: "RSVP",
   },
   {
     date: null,
