@@ -43,7 +43,7 @@ export const EVENTS = [
     end: "11:00 AM",
     type: "roundtable",
     title: "Leaders' Roundtable #1",
-    topic: "AI in planning: what is actually in production today",
+    topic: null,
     place: "Bangalore",
     venueNote: "Venue shared with confirmed guests.",
     format: "Breakfast, one topic, no slides",
