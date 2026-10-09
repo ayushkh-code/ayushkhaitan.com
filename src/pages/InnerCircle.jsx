@@ -242,14 +242,11 @@ function Calendar({ events }) {
               hidden={!matchesFilter(event.type, filter)}
             />
           ))}
-          <a className="ic-suggest" href="mailto:ayushkhaitan@gmail.com">
+          <div className="ic-suggest">
             <span className="ic-suggest__title">Want a topic on the calendar, or want to present?</span>
             <span className="ic-suggest__text">The most requested topics get the next slots.</span>
-            <span className="ic-suggest__cta">
-              Suggest a topic by emailing ayushkhaitan@gmail.com
-              <ArrowIcon size={16} />
-            </span>
-          </a>
+            <span className="ic-suggest__cta">Suggest a topic by emailing ayushkhaitan@gmail.com</span>
+          </div>
         </div>
       </div>
     </section>

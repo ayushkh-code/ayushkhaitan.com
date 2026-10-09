@@ -84,8 +84,8 @@
   font-size: 15px; font-weight: 600; color: var(--ic-olive); text-decoration: none;
 }
 .ic-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.ic-btn svg, .ic-link svg, .ic-suggest__cta svg { transition: transform 0.15s; }
-.ic-btn:hover svg, .ic-link:hover svg, .ic-suggest:hover .ic-suggest__cta svg { transform: translateX(3px); }
+.ic-btn svg, .ic-link svg { transition: transform 0.15s; }
+.ic-btn:hover svg, .ic-link:hover svg { transform: translateX(3px); }
 
 .ic-chip {
   display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--ic-band);
@@ -229,9 +229,8 @@
 .ic-suggest {
   min-height: 240px; padding: 24px; border-radius: 18px; border: 1.5px dashed var(--ic-olive-soft);
   display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px;
-  text-decoration: none; color: var(--ic-ink); transition: border-color 0.15s, background-color 0.15s;
+  color: var(--ic-ink);
 }
-.ic-suggest:hover { border-color: var(--ic-olive); background: rgba(255, 255, 255, 0.5); }
 .ic-suggest__title { font-family: var(--ic-serif); font-size: 24px; line-height: 1.2; }
 .ic-suggest__text { font-size: 15px; color: var(--ic-muted); }
 .ic-suggest__cta { margin-top: 8px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ic-olive); overflow-wrap: anywhere; }
