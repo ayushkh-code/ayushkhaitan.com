@@ -300,7 +300,8 @@ export default function InnerCircle() {
 
           <div className="ic-rooms">
             <article className="ic-room">
-              <div className="ic-room__tag">
+              <h3 className="ic-room__title--center">Inner Circle Members</h3>
+              <div className="ic-room__tag ic-room__tag--center">
                 <span className="ic-room__icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" /><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.3c2.1.7 3.5 2.6 3.5 5.7" /></svg>
                 </span>
