@@ -332,7 +332,7 @@ export default function InnerCircle() {
                 <span className="ic-room__icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
                 </span>
-                <span className="ic-room__label">Director and above, or equivalent · By invitation</span>
+                <span className="ic-room__label">Director and above, or equivalent · By invitation only</span>
               </div>
               <p className="ic-room__desc">A closed room for senior leaders.</p>
               <ul className="ic-facts ic-facts--perks">
