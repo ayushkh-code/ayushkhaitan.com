@@ -334,7 +334,7 @@ export default function InnerCircle() {
                 </span>
                 <span className="ic-room__label">Director and above, or equivalent · By invitation</span>
               </div>
-              <p className="ic-room__desc">A closed room for senior leaders. One topic, no slides, and the Chatham House rule.</p>
+              <p className="ic-room__desc">A closed room for senior leaders.</p>
               <ul className="ic-facts ic-facts--perks">
                 <li>Access to other senior leaders</li>
                 <li>Fractional talent available for industry usecases</li>
