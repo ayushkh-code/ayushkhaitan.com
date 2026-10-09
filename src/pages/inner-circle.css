@@ -230,8 +230,7 @@
 /* ---------- Founder's note ---------- */
 .ic-founder .ic-wrap { display: flex; flex-wrap: wrap; gap: 48px clamp(40px, 6vw, 96px); align-items: flex-start; }
 .ic-founder__aside { flex: 1 1 320px; min-width: 0; }
-.ic-founder blockquote { margin: 0; font-family: var(--ic-serif); font-size: clamp(28px, 3vw, 38px); line-height: 1.25; letter-spacing: -0.01em; }
-.ic-byline { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
+.ic-byline { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
 .ic-avatar {
   position: relative; flex: 0 0 72px; width: 72px; height: 72px; border-radius: 50%; overflow: hidden;
   background: var(--ic-band); border: 3px solid #FFFFFF; box-shadow: 0 0 0 1px var(--ic-olive-soft);

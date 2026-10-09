@@ -312,7 +312,6 @@ export default function InnerCircle() {
         <div className="ic-wrap">
           <div className="ic-founder__aside">
             <p className="ic-eyebrow" id="ic-founder-label">Founder's note</p>
-            <blockquote>Most groups like this turn into job boards or sales funnels. This one runs on small rooms and strict rules.</blockquote>
             <div className="ic-byline">
               <FounderAvatar />
               <div>
