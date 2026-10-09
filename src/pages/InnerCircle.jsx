@@ -280,10 +280,6 @@ export default function InnerCircle() {
           <p className="ic-eyebrow">Bangalore and online · Free to join</p>
           <h1 id="ic-title">Supply Chain<br />Inner Circle</h1>
           <p className="ic-hero__lede">Small rooms for people who plan, build and run supply chains. Open to everyone in the industry, with a closed roundtable for senior leaders.</p>
-          <ul className="ic-promises" aria-label="Our promises">
-            <li>No pitches</li>
-            <li>No job spam</li>
-          </ul>
           <div className="ic-actions">
             <a className="ic-btn ic-btn--primary" href={JOIN_FORM}>
               Join the Inner Circle

@@ -99,11 +99,6 @@
   font-size: clamp(44px, 7vw, 92px); line-height: 1; letter-spacing: -0.025em;
 }
 .ic-hero__lede { margin: 28px auto 0; max-width: 620px; font-size: clamp(17px, 1.7vw, 21px); color: var(--ic-ink-3); }
-.ic-promises { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.ic-promises li {
-  padding: 8px 16px; border-radius: 999px; background: var(--ic-ground);
-  border: 1px solid var(--ic-chip-line); font-size: 14px; font-weight: 500;
-}
 .ic-hero .ic-actions { justify-content: center; }
 
 /* ---------- Origin ---------- */
