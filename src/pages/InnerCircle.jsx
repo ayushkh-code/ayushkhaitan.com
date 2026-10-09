@@ -327,20 +327,20 @@ export default function InnerCircle() {
             </article>
 
             <article className="ic-room ic-room--leaders">
-              <div className="ic-room__tag">
+              <h3 className="ic-room__title--center">Leaders' Roundtable</h3>
+              <div className="ic-room__tag ic-room__tag--center">
                 <span className="ic-room__icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
                 </span>
                 <span className="ic-room__label">Director and above, or equivalent · By invitation</span>
               </div>
-              <h3>Leaders' Roundtable</h3>
               <p className="ic-room__desc">A closed room for senior leaders. One topic, no slides, and the Chatham House rule.</p>
-              <dl className="ic-facts">
-                <div><dt>Format</dt><dd>Breakfast, one topic</dd></div>
-                <div><dt>Seats</dt><dd>12, curated for range</dd></div>
-                <div><dt>Cadence</dt><dd>Monthly, Bangalore</dd></div>
-                <div><dt>Rule</dt><dd>Stays in the room</dd></div>
-              </dl>
+              <ul className="ic-facts ic-facts--perks">
+                <li>Access to other senior leaders</li>
+                <li>Fractional talent available for industry usecases</li>
+                <li>Panel discussions</li>
+                <li>Organized debates</li>
+              </ul>
               <div className="ic-room__foot">
                 <a className="ic-link" href={JOIN_FORM}>
                   Request an invite

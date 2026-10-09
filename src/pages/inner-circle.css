@@ -150,6 +150,11 @@
 .ic-facts dt { font-size: 12px; color: var(--ic-muted); }
 .ic-room--leaders .ic-facts dt { color: var(--ic-on-dark-muted); }
 .ic-facts dd { margin: 2px 0 0; font-weight: 600; }
+.ic-room h3.ic-room__title--center { margin: 0; text-align: center; }
+.ic-room__tag--center { justify-content: center; margin-top: 16px; text-align: center; }
+.ic-facts--perks { list-style: none; padding: 0; }
+.ic-facts--perks li { padding: 14px; border-radius: 12px; background: var(--ic-ground); font-weight: 600; line-height: 1.4; }
+.ic-room--leaders .ic-facts--perks li { background: rgba(241, 242, 230, 0.08); }
 .ic-room__foot { margin-top: auto; padding-top: 28px; }
 .ic-room--leaders .ic-link { color: var(--ic-on-dark); }
 
