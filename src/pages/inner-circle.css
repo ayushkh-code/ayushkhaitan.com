@@ -23,6 +23,9 @@
   --ic-on-dark: #F1F2E6;
   --ic-on-dark-2: #DDE1C3;
   --ic-on-dark-muted: #CDD1B4;
+  --ic-gold: #C9A961;
+  --ic-gold-soft: rgba(201, 169, 97, 0.4);
+  --ic-gold-faint: rgba(201, 169, 97, 0.22);
 
   --ic-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --ic-sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -151,6 +154,14 @@
 .ic-room--leaders .ic-facts dt { color: var(--ic-on-dark-muted); }
 .ic-facts dd { margin: 2px 0 0; font-weight: 600; }
 .ic-room h3.ic-room__title--center { margin: 0; text-align: center; }
+.ic-room--leaders h3.ic-room__title--center::after {
+  content: ""; display: block; width: 48px; height: 1px; margin: 14px auto 0; background: var(--ic-gold);
+}
+.ic-room.ic-room--leaders { border-color: var(--ic-gold-soft); }
+.ic-room--leaders .ic-room__icon { background: rgba(201, 169, 97, 0.14); color: var(--ic-gold); }
+.ic-room--leaders .ic-room__label { color: var(--ic-gold); }
+.ic-room--leaders .ic-facts--perks li { border: 1px solid var(--ic-gold-faint); }
+.ic-room.ic-room--leaders .ic-link { color: var(--ic-gold); }
 .ic-room__tag--center { justify-content: center; margin-top: 16px; text-align: center; }
 .ic-facts--perks { list-style: none; padding: 0; }
 .ic-facts--perks li { padding: 14px; border-radius: 12px; background: var(--ic-ground); font-weight: 600; line-height: 1.4; }
