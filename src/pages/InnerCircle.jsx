@@ -23,13 +23,6 @@ const MONTHS_LONG = [
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const DAYS_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-const FILTERS = [
-  { id: "all", label: "All" },
-  { id: "open", label: "Open sessions" },
-  { id: "leaders", label: "Roundtables" },
-  { id: "online", label: "Online" },
-];
-
 function dateParts(date) {
   if (!date) {
     return { day: "TBD", month: "", monthLong: "", weekday: "", weekdayLong: "" };
@@ -66,13 +59,6 @@ function eventView(e) {
     signupNote: e.signupNote,
     url: e.url || (e.type === "roundtable" ? LEADERS_FORM : JOIN_FORM),
   };
-}
-
-function matchesFilter(type, filter) {
-  if (filter === "open") return type !== "roundtable";
-  if (filter === "leaders") return type === "roundtable";
-  if (filter === "online") return type === "webinar";
-  return true;
 }
 
 function upcomingEvents(now) {
@@ -116,11 +102,11 @@ function SignupNote({ text, url }) {
   );
 }
 
-function EventCard({ event, hidden }) {
+function EventCard({ event }) {
   const v = eventView(event);
   const leaders = event.type === "roundtable";
   return (
-    <article className="ic-event" hidden={hidden}>
+    <article className="ic-event">
       <div className="ic-event__top">
         <div className="ic-event__date">
           <p className="ic-event__day">{v.day}</p>
@@ -197,16 +183,6 @@ function NextUp({ event }) {
 }
 
 function Calendar({ events }) {
-  const [filter, setFilter] = useState("all");
-  const [announcement, setAnnouncement] = useState("");
-  const shown = events.filter((e) => matchesFilter(e.type, filter)).length;
-
-  function selectFilter(id) {
-    const count = events.filter((e) => matchesFilter(e.type, id)).length;
-    setFilter(id);
-    setAnnouncement(count === 1 ? "Showing 1 event" : `Showing ${count} events`);
-  }
-
   return (
     <section className="ic-section ic-calendar" id="events" aria-labelledby="ic-events-title">
       <div className="ic-wrap">
@@ -216,31 +192,11 @@ function Calendar({ events }) {
             <h2 className="ic-h2" id="ic-events-title">Upcoming events</h2>
             <p className="ic-lede">Open sessions are for anyone in the industry. Roundtables are for Director and above, or equivalent.</p>
           </div>
-          <div className="ic-filters" role="group" aria-label="Filter events">
-            {FILTERS.map(({ id, label }) => (
-              <button
-                key={id}
-                type="button"
-                className="ic-filter"
-                aria-pressed={filter === id}
-                onClick={() => selectFilter(id)}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
         </div>
 
-        <p className="ic-visually-hidden" aria-live="polite">{announcement}</p>
-
         <div className="ic-events">
-          <p className="ic-empty" hidden={shown !== 0}>No events in this view yet. Join the circle and you'll hear when one is added.</p>
           {events.map((event) => (
-            <EventCard
-              key={`${event.date}-${event.title}`}
-              event={event}
-              hidden={!matchesFilter(event.type, filter)}
-            />
+            <EventCard key={`${event.date}-${event.title}`} event={event} />
           ))}
           <div className="ic-suggest">
             <span className="ic-suggest__title">Want a topic on the calendar, or want to present?</span>
