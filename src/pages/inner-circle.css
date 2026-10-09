@@ -247,23 +247,6 @@
 .ic-founder__links a { color: var(--ic-olive); font-weight: 600; text-decoration: underline; }
 .ic-founder__links span { color: var(--ic-olive-soft); }
 
-/* ---------- House rules ---------- */
-.ic-rules { padding: 0 0 var(--ic-section); }
-.ic-card { padding: clamp(28px, 4vw, 56px); border-radius: 24px; background: #FFFFFF; border: 1px solid var(--ic-line); }
-.ic-rules__head { display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between; }
-.ic-rules__head > p { margin: 0; max-width: 360px; font-size: 15px; color: var(--ic-muted); }
-.ic-rule-list {
-  list-style: none; margin: 32px 0 0; padding: 0; display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 28px 48px;
-}
-.ic-rule-list li { display: flex; gap: 16px; align-items: flex-start; }
-.ic-check {
-  flex: 0 0 36px; width: 36px; height: 36px; border-radius: 50%; background: var(--ic-band);
-  color: var(--ic-olive); display: flex; align-items: center; justify-content: center;
-}
-.ic-rule-list h3 { margin: 4px 0 0; font-size: 17px; font-weight: 600; line-height: 1.35; }
-.ic-rule-list p { margin: 4px 0 0; font-size: 15px; color: var(--ic-muted); }
-
 /* ---------- FAQ ---------- */
 .ic-faq { padding: 0 0 var(--ic-section); }
 .ic-faq .ic-wrap { max-width: 860px; }

@@ -78,14 +78,6 @@ function ArrowIcon({ size = 18 }) {
   );
 }
 
-function CheckIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12.5l4.5 4.5L19 7.5" />
-    </svg>
-  );
-}
-
 function PlusIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -331,47 +323,10 @@ export default function InnerCircle() {
         </div>
       </section>
 
-      {/* ===== House rules ===== */}
-      <section className="ic-rules" aria-labelledby="ic-rules-title">
-        <div className="ic-wrap">
-          <div className="ic-card">
-            <div className="ic-rules__head">
-              <div>
-                <p className="ic-eyebrow">House rules</p>
-                <h2 className="ic-h2" id="ic-rules-title">What every member agrees to</h2>
-              </div>
-              <p>Five rules that keep the room worth showing up for.</p>
-            </div>
-            <ol className="ic-rule-list">
-              <li>
-                <span className="ic-check" aria-hidden="true"><CheckIcon /></span>
-                <div><h3>No selling</h3><p>Vendors and consultants are welcome as practitioners. Sessions and the group stay pitch-free.</p></div>
-              </li>
-              <li>
-                <span className="ic-check" aria-hidden="true"><CheckIcon /></span>
-                <div><h3>No job asks in sessions</h3><p>Openings and asks go in one monthly thread, and nowhere else.</p></div>
-              </li>
-              <li>
-                <span className="ic-check" aria-hidden="true"><CheckIcon /></span>
-                <div><h3>Chatham House rule</h3><p>Share what you learned. Never who said it.</p></div>
-              </li>
-              <li>
-                <span className="ic-check" aria-hidden="true"><CheckIcon /></span>
-                <div><h3>Your details stay here</h3><p>The member list is never shared or sold.</p></div>
-              </li>
-              <li>
-                <span className="ic-check" aria-hidden="true"><CheckIcon /></span>
-                <div><h3>Show up when you RSVP</h3><p>Seats are limited. Two no-shows and you lose priority.</p></div>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
       {/* ===== FAQ ===== */}
       <section className="ic-faq" aria-labelledby="ic-faq-title">
         <div className="ic-wrap">
-          <p className="ic-eyebrow">FAQ</p>
+          <p className="ic-eyebrow">FAQs</p>
           <h2 className="ic-h2" id="ic-faq-title">Questions</h2>
           <div className="ic-faq__list">
             <details open>
