@@ -1,4 +1,6 @@
 export const JOIN_FORM = "https://forms.gle/vLyd9eVqJ2sq4wcs6";
+export const LEADERS_FORM =
+  "https://docs.google.com/forms/d/e/1FAIpQLSechrxn63M0GwdSm7owhPgygoAq7qeNpU_fjOEt5sIEUQ2JVw/viewform";
 
 /*
   SAMPLE EVENTS: replace dates, topics and venues with real ones before publishing.

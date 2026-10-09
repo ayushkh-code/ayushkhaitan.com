@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EVENTS, JOIN_FORM } from "../data/innerCircleEvents";
+import { EVENTS, JOIN_FORM, LEADERS_FORM } from "../data/innerCircleEvents";
 import { innerCircleMeta } from "../data/pageMeta";
 import { HEADSHOT_SRC } from "../components/Headshot";
 import usePageMeta from "../hooks/usePageMeta";
@@ -64,7 +64,7 @@ function eventView(e) {
     seats: e.seats ? String(e.seats) : "Open",
     cta: CTA[e.type],
     signupNote: e.signupNote,
-    url: e.url || JOIN_FORM,
+    url: e.url || (e.type === "roundtable" ? LEADERS_FORM : JOIN_FORM),
   };
 }
 
@@ -342,7 +342,7 @@ export default function InnerCircle() {
                 <li>Organized debates</li>
               </ul>
               <div className="ic-room__foot">
-                <a className="ic-link" href={JOIN_FORM}>
+                <a className="ic-link" href={LEADERS_FORM}>
                   Request an invite
                   <ArrowIcon size={16} />
                 </a>
