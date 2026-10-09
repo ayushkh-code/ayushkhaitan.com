@@ -133,7 +133,7 @@ function EventCard({ event, hidden }) {
       </div>
       <p className="ic-event__kind">{v.kind}</p>
       <h3>{v.title}</h3>
-      <p className="ic-event__topic">{v.topic}</p>
+      {v.topic && <p className="ic-event__topic">{v.topic}</p>}
       <div className="ic-event__foot">
         <div className="ic-event__meta">
           <span>
@@ -173,7 +173,7 @@ function NextUp({ event }) {
           <div className="ic-ticket__body">
             <span className="ic-chip">Open to all</span>
             <h3>{v.title}</h3>
-            <p className="ic-ticket__topic">{v.topic}</p>
+            {v.topic && <p className="ic-ticket__topic">{v.topic}</p>}
             <dl className="ic-details">
               <div><dt>Where</dt><dd>{v.where}</dd></div>
               <div><dt>When</dt><dd>{v.when}</dd></div>

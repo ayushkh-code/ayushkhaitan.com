@@ -11,14 +11,14 @@ export const JOIN_FORM = "https://forms.gle/vLyd9eVqJ2sq4wcs6";
 export const EVENTS = [
   {
     date: "2026-10-17",
-    start: "10:00 AM",
-    end: "12:30 PM",
+    start: "4:00 PM",
+    end: "6:00 PM",
     type: "meetup",
     title: "Bangalore Meetup #1",
-    topic: "Dark store inventory: what actually breaks at 10-minute delivery",
+    topic: null,
     place: "Indiranagar, Bangalore",
     venueNote: "Venue shared on RSVP.",
-    format: "Three short talks, then open discussion",
+    format: "Individual intros, open discussion on a supply chain problem",
     seats: 10,
     signupNote: "To receive information on this event, please fill up the form",
   },
