@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festival Surge Capacity Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f5f7;
+      --card: #fff;
+      --ink: #1c2430;
+      --muted: #5c6b7a;
+      --line: #d9e0e7;
+      --accent: #12324d;
+      --orange: #fff1e6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      padding: 20px 24px 8px;
+    }
+    header h1 { margin: 0 0 4px; font-size: 24px; }
+    header p { margin: 0; color: var(--muted); }
+    .layout {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 18px;
+      padding: 12px 24px 32px;
+      align-items: start;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 14px 10px;
+      margin-bottom: 12px;
+    }
+    .card h2 { margin: 0 0 8px; font-size: 15px; }
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      margin: 8px 0;
+    }
+    input[type="number"] {
+      width: 112px;
+      padding: 6px 8px;
+      border: 1px solid #b7c3ce;
+      border-radius: 6px;
+      font: inherit;
+    }
+    button {
+      font: inherit;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    .reset, .webhook-btn {
+      width: 100%;
+      padding: 8px 10px;
+      background: #fff;
+      border: 1px solid #b7c3ce;
+    }
+    .run {
+      width: 100%;
+      margin-top: 8px;
+      padding: 12px 10px;
+      font-size: 18px;
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+    }
+    .run:disabled { opacity: 0.6; cursor: wait; }
+    .error {
+      background: #fde8e8;
+      color: #9f1239;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+    }
+    .placeholder { color: var(--muted); padding: 12px 2px 18px; }
+    .status-line { margin: 0 0 10px; font-size: 14px; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      border-top: 4px solid #94a3b8;
+    }
+    .kpis.green .kpi { border-top-color: #15803d; background: #f3fbf6; }
+    .kpis.amber .kpi { border-top-color: #d97706; background: #fffbeb; }
+    .kpis.red .kpi { border-top-color: #dc2626; background: #fef2f2; }
+    .kpi h3 { margin: 0; font-size: 12px; font-weight: 600; color: var(--muted); }
+    .kpi .value { margin: 6px 0 0; font-size: 22px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      background: var(--bg);
+      padding: 8px 0 4px;
+    }
+    .kpi .sub { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+    .chart-card h2 { margin-bottom: 4px; }
+    .chart-box { position: relative; height: 320px; }
+    .table-wrap, .log-wrap {
+      max-height: 340px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 7px 8px; text-align: right; white-space: nowrap; border-bottom: 1px solid #eef2f6; }
+    th:first-child, td:first-child { text-align: left; }
+    th { position: sticky; top: 0; background: #f8fafc; }
+    tr.festival td { background: var(--orange); }
+    .live {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+    }
+    .webhook-row { display: flex; gap: 8px; margin: 8px 0 12px; }
+    .webhook-row input { flex: 1; width: auto; }
+    .webhook-btn { width: auto; padding: 6px 10px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: 1fr; }
+      header, .layout { padding-left: 14px; padding-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Festival Surge Capacity Calculator</h1>
+    <p>Lens-fitting lab backlog and staffing for a 3-week festival surge.</p>
+  </header>
+  <main class="layout">
+    <section>
+      <form id="calc-form">
+        <div class="card">
+          <h2>Demand</h2>
+          <label>Baseline daily orders <input name="baseline" type="number" min="0" step="1" value="35000" required></label>
+          <label>Festival volume multiplier <input name="multiplier" type="number" min="0" step="0.1" value="2.0" required></label>
+          <label>Festival start day <input name="festivalStart" type="number" min="1" step="1" value="5" required></label>
+          <label>Festival duration (days) <input name="duration" type="number" min="0" step="1" value="21" required></label>
+          <label>Simulation horizon (days) <input name="horizon" type="number" min="1" max="366" step="1" value="40" required></label>
+        </div>
+        <div class="card">
+          <h2>Lab Throughput</h2>
+          <label>Number of labs <input name="labs" type="number" min="0" step="1" value="20" required></label>
+          <label>Shifts per day <input name="shifts" type="number" min="0" step="1" value="2" required></label>
+          <label>Technicians per shift per lab <input name="techsPerShiftPerLab" type="number" min="0" step="1" value="25" required></label>
+          <label>Lenses fitted per technician per hour <input name="lensesPerTechPerHour" type="number" min="0" step="0.1" value="6" required></label>
+          <label>Shift length (hours) <input name="shiftHours" type="number" min="0" step="0.5" value="8" required></label>
+          <label>Lab efficiency % <input name="efficiency" type="number" min="0" max="100" step="1" value="85" required></label>
+        </div>
+        <div class="card">
+          <h2>Staffing</h2>
+          <label>Starting backlog (orders) <input name="startingBacklog" type="number" min="0" step="1" value="0" required></label>
+          <label>Target days to clear backlog (SLA) <input name="slaDays" type="number" min="1" step="1" value="3" required></label>
+        </div>
+        <div class="actions">
+          <button class="reset" type="button" id="reset-btn">Reset defaults</button>
+          <button class="run" type="submit" id="run-btn">Run</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <div id="error" class="error" hidden></div>
+      <div id="placeholder" class="placeholder">Run the model to see capacity, backlog, and the staffing needed to clear it.</div>
+      <div id="results" hidden>
+        <p id="status-line" class="status-line"></p>
+        <div id="kpis" class="kpis"></div>
+        <div class="card chart-card">
+          <h2>Daily demand vs current capacity</h2>
+          <p class="muted">The orange band is the festival window.</p>
+          <div class="chart-box"><canvas id="demand-chart"></canvas></div>
+        </div>
+        <div class="card chart-card">
+          <h2>Projected backlog</h2>
+          <p class="muted">Current staffing compared with the recommended staffing level.</p>
+          <div class="chart-box"><canvas id="backlog-chart"></canvas></div>
+        </div>
+        <div class="card chart-card">
+          <h2>Required techs per shift per lab</h2>
+          <p class="muted">The line marks current staffing.</p>
+          <div class="chart-box"><canvas id="techs-chart"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Day by day</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Demand</th>
+                  <th>Capacity</th>
+                  <th>Processed</th>
+                  <th>Backlog</th>
+                  <th>Backlog at recommended staffing</th>
+                  <th>Required techs</th>
+                </tr>
+              </thead>
+              <tbody id="day-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="automation">
+        <h2><span class="live"></span>Automation Activity</h2>
+        <p class="muted">A live order feed recalculates every 20 seconds. A webhook can push a new baseline at any time.</p>
+        <p id="next-run" class="muted">Waiting for the scheduler…</p>
+        <form id="webhook-form" class="webhook-row">
+          <input id="webhook-orders" type="number" min="0" step="1" value="70000" aria-label="Incoming orders">
+          <button class="webhook-btn" type="submit">Send order count</button>
+        </form>
+        <div class="log-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Run</th>
+                <th>When</th>
+                <th>Trigger</th>
+                <th>Orders received</th>
+                <th>Peak backlog</th>
+                <th>Recommended techs</th>
+                <th>Status</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody id="run-rows">
+              <tr><td colspan="8">No runs yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const DEFAULTS = {
+      baseline: 35000,
+      multiplier: 2,
+      festivalStart: 5,
+      duration: 21,
+      horizon: 40,
+      labs: 20,
+      shifts: 2,
+      techsPerShiftPerLab: 25,
+      lensesPerTechPerHour: 6,
+      shiftHours: 8,
+      efficiency: 85,
+      startingBacklog: 0,
+      slaDays: 3,
+    }
+
+    const form = document.getElementById('calc-form')
+    const charts = {}
+    let nextRunAt = null
+
+    const festivalShade = {
+      id: 'festivalShade',
+      beforeDatasetsDraw(chart) {
+        const opts = chart.options.plugins.festivalShade
+        if (!opts) return
+        const x = chart.scales.x
+        const area = chart.chartArea
+        if (!x || !area) return
+        const left = x.getPixelForValue(opts.start)
+        const right = x.getPixelForValue(opts.end)
+        const ctx = chart.ctx
+        ctx.save()
+        ctx.fillStyle = 'rgba(251, 146, 60, 0.22)'
+        ctx.fillRect(left, area.top, right - left, area.bottom - area.top)
+        ctx.restore()
+      },
+    }
+
+    function fmt(n) {
+      if (typeof n !== 'number' || !Number.isFinite(n)) return '—'
+      const rounded = Math.abs(n - Math.round(n)) < 0.05 ? Math.round(n) : Math.round(n * 10) / 10
+      return rounded.toLocaleString('en-IN')
+    }
+
+    function readInputs() {
+      const data = {}
+      for (const key of Object.keys(DEFAULTS)) {
+        data[key] = Number(form.elements[key].value)
+      }
+      return data
+    }
+
+    function applyDefaults() {
+      for (const [key, value] of Object.entries(DEFAULTS)) {
+        form.elements[key].value = value
+      }
+    }
+
+    function showError(message) {
+      const el = document.getElementById('error')
+      if (!message) {
+        el.hidden = true
+        el.textContent = ''
+        return
+      }
+      el.hidden = false
+      el.textContent = message
+    }
+
+    function clearsText(value) {
+      if (value === 'Not cleared within horizon') return 'Not cleared within horizon'
+      if (value === 0) return 'No backlog'
+      return 'Day ' + value
+    }
+
+    function statusText(summary) {
+      if (summary.status === 'red') return 'Backlog is still open at the end of the horizon.'
+      if (summary.status === 'amber') return 'Backlog clears later than the SLA after the festival.'
+      return 'Backlog clears within the SLA after the festival.'
+    }
+
+    function renderKpis(summary) {
+      const cards = [
+        ['Daily lab capacity', fmt(summary.dailyCapacity), 'orders / day'],
+        ['Peak backlog', fmt(summary.peakBacklog), 'Day ' + summary.peakBacklogDay],
+        ['Backlog clears', clearsText(summary.backlogClearsOn), summary.daysWithBacklog + ' days with backlog'],
+        ['Recommended techs', fmt(summary.recommendedTechsPerShiftPerLab), 'per shift per lab, now ' + fmt(summary.currentTechsPerShiftPerLab)],
+        ['Incremental hires needed', fmt(summary.incrementalHires), 'across all labs and shifts'],
+        ['Utilization', summary.utilization.toFixed(1) + '%', 'of current daily capacity'],
+      ]
+      const wrap = document.getElementById('kpis')
+      wrap.className = 'kpis ' + summary.status
+      wrap.innerHTML = cards.map(([title, value, sub]) =>
+        '<article class="kpi"><h3>' + title + '</h3><p class="value">' + value + '</p><p class="sub">' + sub + '</p></article>'
+      ).join('')
+      document.getElementById('status-line').textContent = statusText(summary)
+    }
+
+    function axisTicks() {
+      return { callback: (value) => fmt(value) }
+    }
+
+    function destroyChart(name) {
+      if (charts[name]) {
+        charts[name].destroy()
+        charts[name] = null
+      }
+    }
+
+    function renderCharts(payload) {
+      const { summary, days } = payload
+      const labels = days.map((d) => d.day)
+      if (typeof Chart === 'undefined') {
+        showError('Chart.js did not load. Check the network connection and run again.')
+        return
+      }
+
+      destroyChart('demand')
+      charts.demand = new Chart(document.getElementById('demand-chart'), {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Daily demand',
+              data: days.map((d) => ({ x: d.day, y: d.demand })),
+              borderColor: '#ea580c',
+              backgroundColor: '#ea580c',
+              pointRadius: 0,
+              tension: 0,
+            },
+            {
+              label: 'Current capacity',
+              data: days.map((d) => ({ x: d.day, y: d.capacity })),
+              borderColor: '#0284c7',
+              backgroundColor: '#0284c7',
+              borderDash: [6, 4],
+              pointRadius: 0,
+              tension: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'bottom' },
+            festivalShade: {
+              start: summary.festivalStart - 0.5,
+              end: summary.festivalLastDay + 0.5,
+            },
+          },
+          scales: {
+            x: {
+              type: 'linear',
+              min: 0,
+              max: days[days.length - 1].day,
+              title: { display: true, text: 'Day' },
+              ticks: { stepSize: 5, precision: 0 },
+            },
+            y: { title: { display: true, text: 'Orders' }, ticks: axisTicks() },
+          },
+        },
+        plugins: [festivalShade],
+      })
+
+      destroyChart('backlog')
+      charts.backlog = new Chart(document.getElementById('backlog-chart'), {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            {
+              label: 'Backlog at current staffing',
+              data: days.map((d) => d.backlog),
+              borderColor: '#be123c',
+              backgroundColor: '#be123c',
+              pointRadius: 0,
+              tension: 0,
+            },
+            {
+              label: 'Backlog at recommended staffing',
+              data: days.map((d) => d.backlogWithRecommendedStaff),
+              borderColor: '#15803d',
+              backgroundColor: '#15803d',
+              pointRadius: 0,
+              tension: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { position: 'bottom' } },
+          scales: {
+            x: { title: { display: true, text: 'Day' } },
+            y: { title: { display: true, text: 'Orders' }, ticks: axisTicks() },
+          },
+        },
+      })
+
+      destroyChart('techs')
+      charts.techs = new Chart(document.getElementById('techs-chart'), {
+        data: {
+          labels,
+          datasets: [
+            {
+              type: 'bar',
+              label: 'Required techs per shift per lab',
+              data: days.map((d) => d.requiredTechs),
+              backgroundColor: '#7dd3fc',
+              borderColor: '#0369a1',
+              borderWidth: 1,
+            },
+            {
+              type: 'line',
+              label: 'Current staffing',
+              data: days.map(() => summary.currentTechsPerShiftPerLab),
+              borderColor: '#111827',
+              pointRadius: 0,
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { position: 'bottom' } },
+          scales: {
+            x: { title: { display: true, text: 'Day' } },
+            y: { beginAtZero: true, title: { display: true, text: 'Technicians' }, ticks: axisTicks() },
+          },
+        },
+      })
+    }
+
+    function renderTable(payload) {
+      const body = document.getElementById('day-rows')
+      body.innerHTML = payload.days.map((row) => {
+        const festival = row.day >= payload.summary.festivalStart && row.day <= payload.summary.festivalLastDay
+        return '<tr class="' + (festival ? 'festival' : '') + '">' +
+          '<td>' + row.day + '</td>' +
+          '<td>' + fmt(row.demand) + '</td>' +
+          '<td>' + fmt(row.capacity) + '</td>' +
+          '<td>' + fmt(row.processed) + '</td>' +
+          '<td>' + fmt(row.backlog) + '</td>' +
+          '<td>' + fmt(row.backlogWithRecommendedStaff) + '</td>' +
+          '<td>' + fmt(row.requiredTechs) + '</td>' +
+          '</tr>'
+      }).join('')
+    }
+
+    async function runModel(event) {
+      event.preventDefault()
+      const button = document.getElementById('run-btn')
+      button.disabled = true
+      showError('')
+      try {
+        const res = await fetch('/api/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(readInputs()),
+        })
+        const payload = await res.json()
+        if (!res.ok) throw new Error(payload.error || 'Calculation failed')
+        document.getElementById('placeholder').hidden = true
+        document.getElementById('results').hidden = false
+        renderKpis(payload.summary)
+        renderCharts(payload)
+        renderTable(payload)
+        requestAnimationFrame(() => {
+          Object.values(charts).forEach((chart) => chart && chart.resize())
+        })
+      } catch (err) {
+        showError(err.message)
+      } finally {
+        button.disabled = false
+      }
+    }
+
+    function renderRuns(data) {
+      nextRunAt = data.nextRunAt
+      const rows = data.runs || []
+      const body = document.getElementById('run-rows')
+      if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="8">No runs yet.</td></tr>'
+        return
+      }
+      body.innerHTML = rows.map((run) =>
+        '<tr>' +
+        '<td>#' + run.id + '</td>' +
+        '<td>' + new Date(run.timestamp).toLocaleTimeString() + '</td>' +
+        '<td>' + run.trigger + '</td>' +
+        '<td>' + fmt(run.ordersReceived) + '</td>' +
+        '<td>' + fmt(run.peakBacklog) + '</td>' +
+        '<td>' + fmt(run.recommendedTechs) + '</td>' +
+        '<td>' + run.status + '</td>' +
+        '<td>' + run.durationMs + ' ms</td>' +
+        '</tr>'
+      ).join('')
+    }
+
+    function renderCountdown() {
+      const el = document.getElementById('next-run')
+      if (!nextRunAt) return
+      const seconds = Math.ceil((nextRunAt - Date.now()) / 1000)
+      el.textContent = seconds > 0
+        ? 'Next live order feed in ' + seconds + 's.'
+        : 'Live order feed is running.'
+    }
+
+    async function refreshRuns() {
+      try {
+        const res = await fetch('/api/runs')
+        if (!res.ok) return
+        renderRuns(await res.json())
+        renderCountdown()
+      } catch {
+        document.getElementById('next-run').textContent = 'Live feed is unreachable.'
+      }
+    }
+
+    async function sendWebhook(event) {
+      event.preventDefault()
+      showError('')
+      const orders = Number(document.getElementById('webhook-orders').value)
+      try {
+        const res = await fetch('/api/webhook/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ orders }),
+        })
+        const payload = await res.json()
+        if (!res.ok) throw new Error(payload.error || 'Webhook failed')
+        await refreshRuns()
+      } catch (err) {
+        showError(err.message)
+      }
+    }
+
+    document.getElementById('reset-btn').addEventListener('click', applyDefaults)
+    form.addEventListener('submit', runModel)
+    document.getElementById('webhook-form').addEventListener('submit', sendWebhook)
+    refreshRuns()
+    setInterval(refreshRuns, 3000)
+    setInterval(renderCountdown, 1000)
+  </script>
+</body>
+</html>
